@@ -1,9 +1,5 @@
 # Teoria - Brazo robotico, joints y movimientos
 
-![Referencia de movimiento articular (MovJ)](../../engitbook/script/images/movj.png)
-
-![Referencia de movimiento lineal (MovL)](../../engitbook/script/images/movl.png)
-
 ## Cinematica basica
 
 Un manipulador de 6 GDL (grados de libertad) se puede describir en dos dominios:

@@ -1,7 +1,5 @@
 # Teoria - Deteccion de voz con Vosk (palabras clave)
 
-![Referencia de pipeline de audio/script](../../engitbook/script/images/cam_script.png)
-
 ## Enfoque del proyecto
 
 El sistema usa reconocimiento automatico de voz offline con Vosk para detectar un vocabulario cerrado orientado a control del robot.

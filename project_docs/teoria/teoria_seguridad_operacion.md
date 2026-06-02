@@ -1,7 +1,5 @@
 # Teoria - Seguridad operativa en celdas roboticas
 
-![Referencia de advertencias operativas](../../engitbook/script/images/warn.png)
-
 ## Enfoque de seguridad por capas
 
 La operacion segura no depende de una sola barrera, sino de varias capas tecnicas y procedimentales.

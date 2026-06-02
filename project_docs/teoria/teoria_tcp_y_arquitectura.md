@@ -1,7 +1,5 @@
 # Teoria - TCP y arquitectura de integracion PC-Robot
 
-![Referencia de configuracion de red/velocidad](../../engitbook/script/images/speed_setting.png)
-
 ## Arquitectura logica del sistema
 
 - Robot (Lua): servidor TCP en el controlador (`tcp_cmd.lua`).
