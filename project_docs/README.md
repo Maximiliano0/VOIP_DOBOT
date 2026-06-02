@@ -70,7 +70,7 @@ python -m pip install -r project_docs/requirements.txt
 
 Indice general:
 
-- [INDEX.md](INDEX.md)
+- [INDEX.md](../INDEX.md)
 
 Grupos:
 

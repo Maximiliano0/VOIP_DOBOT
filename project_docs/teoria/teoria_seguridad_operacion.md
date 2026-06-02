@@ -1,28 +1,63 @@
 # Teoria - Seguridad operativa en celdas roboticas
 
-## Capas de seguridad consideradas
+![Referencia de advertencias operativas](../../engitbook/script/images/warn.png)
 
-- Planeamiento seguro: checks previos (`CheckMovJ`, `CheckMovL`).
-- Parametros conservadores de velocidad y aceleracion para pruebas.
-- Collision detection del controlador.
-- SafeSkin y zonas virtuales (cuando estan configuradas en controlador).
+## Enfoque de seguridad por capas
 
-## Riesgos del control por voz
+La operacion segura no depende de una sola barrera, sino de varias capas tecnicas y procedimentales.
 
-- Falsos positivos por ruido.
-- Activaciones no intencionales por terceros.
-- Retrasos en deteccion en ambientes adversos.
+Capas relevantes en este proyecto:
 
-## Mitigaciones recomendadas
+- Prevencion por software: `CheckMovJ` y `CheckMovL` antes de mover.
+- Limites dinamicos: `SpeedFactor`, `a`, `v`, distancia de retroceso y sensibilidad de colision.
+- Protecciones del controlador: collision detection, SafeSkin y zonas virtuales.
+- Procedimientos humanos: validacion de entorno, E-stop accesible, checklist de arranque.
 
-- Validar reconocimiento local antes del envio automatico.
-- Mantener boton de parada de emergencia accesible.
-- Limitar amplitud y velocidad de movimientos comandados por voz.
-- Operar inicialmente sin carga o con carga conocida.
+## Riesgos especificos de control por voz
 
-## Criterios de puesta en marcha
+- Falsos positivos por ruido impulsivo o conversaciones cercanas.
+- Comandos no intencionales por terceros en el area.
+- Dependencia de calidad de audio (microfono, eco, reverberacion).
 
-- Workspace despejado.
-- Home verificado.
-- Conexion TCP estable.
-- Operador entrenado en parada y recuperacion.
+## Mitigaciones tecnicas recomendadas
+
+- Vocabulario cerrado de comandos (ya aplicado).
+- Confirmacion de estado en GUI (log y ultimo comando).
+- Umbrales operativos conservadores de velocidad durante comisionado.
+- Priorizar comando `home` como estrategia de recuperacion.
+- Posibilidad de desactivar envio automatico y operar solo en modo manual.
+
+## Mitigaciones procedimentales
+
+- Delimitar zona de trabajo y acceso.
+- Probar primero en vacio y sin carga de riesgo.
+- Definir plan de parada y recuperacion ante evento inseguro.
+- Registrar incidentes y ajustar parametros de sensibilidad.
+
+## Checklist minimo de puesta en marcha
+
+- Espacio libre y sin obstrucciones.
+- Robot en postura conocida (`home`).
+- Conexion TCP verificada con `ping`.
+- Prueba de deteccion de voz en local antes de habilitar envio.
+- Operador con acceso inmediato a parada de emergencia.
+
+## Nota de cumplimiento
+
+La aplicacion de software es un componente de la estrategia de seguridad, pero no sustituye evaluacion de riesgo de celda, hardware de seguridad ni cumplimiento normativo del fabricante/integrador.
+
+## Referencias cruzadas internas
+
+- Fundamentos de voz y ASR: [teoria_modelo_deteccion_voz.md](teoria_modelo_deteccion_voz.md)
+- Cinematica y trayectorias: [teoria_brazo_joints_movimientos.md](teoria_brazo_joints_movimientos.md)
+- Arquitectura de comunicacion TCP: [teoria_tcp_y_arquitectura.md](teoria_tcp_y_arquitectura.md)
+
+## Referencias (APA 7)
+
+International Organization for Standardization. (2011). ISO 10218-1:2011 Robots and robotic devices - Safety requirements for industrial robots - Part 1: Robots.
+
+International Organization for Standardization. (2011). ISO 10218-2:2011 Robots and robotic devices - Safety requirements for industrial robots - Part 2: Robot systems and integration.
+
+International Organization for Standardization. (2016). ISO/TS 15066:2016 Robots and robotic devices - Collaborative robots.
+
+National Institute of Standards and Technology. (2020). NISTIR 8286: Integrating cybersecurity and enterprise risk management (ERM).

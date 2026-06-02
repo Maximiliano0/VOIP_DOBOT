@@ -1,11 +1,25 @@
 # Dobot Magician E6 - Control por TCP y voz
 
-Proyecto para controlar un Dobot Magician E6 por Ethernet desde PC, con dos modos principales:
+<p align="center">
+  <img src="project_docs/media/Magician%20E6.jpg" alt="Dobot Magician E6" width="320"/>
+</p>
+
+<p align="center">
+  Integracion PC-Robot con GUI, TCP persistente y comandos por voz offline.
+</p>
+
+## Navegacion rapida
+
+- [Indice global](INDEX.md)
+- [Documentacion tecnica](project_docs/README.md)
+- [Dependencias](project_docs/requirements.txt)
+
+## Resumen
+
+Proyecto para controlar un Dobot Magician E6 por Ethernet desde PC con dos modos principales:
 
 - Envio manual de comandos TCP.
 - Deteccion de voz de palabras clave y envio automatico al robot.
-
-![Brazo robotico / referencia de plataforma](project_docs/media/Magician%20E6.jpg)
 
 ## Objetivo
 
@@ -31,7 +45,7 @@ Implementar una arquitectura simple, robusta y reproducible para:
   - Referencia API offline de Dobot (fuente de verdad para funciones Lua).
 
 - `project_docs/`
-  - Requisitos unificados, documentacion por grupos y teoria.
+  - Requisitos unificados, documentacion por grupos, teoria y evidencia.
 
 ## Dependencias de entorno
 
@@ -44,6 +58,12 @@ Comando sugerido:
 ```bash
 python -m pip install -r project_docs/requirements.txt
 ```
+
+## Modos de uso
+
+- `02_com`: control manual por GUI/CLI via TCP.
+- `03_ml`: deteccion de voz local (sin envio a robot).
+- `04_voice_cmd`: deteccion de voz + envio TCP integrado.
 
 ## Flujo rapido de uso
 
@@ -71,7 +91,7 @@ El proyecto incluye builds en `dist/` para uso en Windows sin abrir terminal.
 ## Documentacion incluida en project_docs
 
 - Portada de documentacion: `project_docs/README.md`
-- Indice navegable: `project_docs/INDEX.md`
+- Indice navegable: `INDEX.md`
 - Documentos por grupo: `project_docs/grupos/`
 - Documentos teoricos: `project_docs/teoria/`
 - Evidencia multimedia: `project_docs/media/`
