@@ -5,7 +5,7 @@ Proyecto para controlar un Dobot Magician E6 por Ethernet desde PC, con dos modo
 - Envio manual de comandos TCP.
 - Deteccion de voz de palabras clave y envio automatico al robot.
 
-![Brazo robotico / referencia de plataforma](engitbook/script/images/load.png)
+![Brazo robotico / referencia de plataforma](project_docs/media/Magician%20E6.jpg)
 
 ## Objetivo
 
