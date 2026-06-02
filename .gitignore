@@ -1,0 +1,6 @@
+# Local environment files
+.env
+.env.*
+
+# Do not publish repository automation config
+.github/

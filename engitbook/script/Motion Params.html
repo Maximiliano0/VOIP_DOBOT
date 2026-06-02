@@ -1,0 +1,2594 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5 Motion parameter · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Motion Params.html" />
+    
+    
+    <link rel="prev" href="Motion Relative.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.dobot.cn/" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="lua.html">
+            
+                <a href="lua.html">
+            
+                    
+                    1 Lua basic grammar
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Base.html">
+            
+                <a href="Base.html">
+            
+                    
+                    Variable and data type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="lua_operator.html">
+            
+                <a href="lua_operator.html">
+            
+                    
+                    Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="lua_control.html">
+            
+                <a href="lua_control.html">
+            
+                    
+                    Process control
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="common.html">
+            
+                <a href="common.html">
+            
+                    
+                    2 General description
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="common.html">
+            
+                <a href="common.html#motion_type">
+            
+                    
+                    Motion mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="common.html">
+            
+                <a href="common.html#point">
+            
+                    
+                    Point parameter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="common.html">
+            
+                <a href="common.html#coord">
+            
+                    
+                    Coordinate system parameter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="common.html">
+            
+                <a href="common.html#speed">
+            
+                    
+                    Speed parameter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="common.html">
+            
+                <a href="common.html#cp_r">
+            
+                    
+                    CP parameter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="common.html">
+            
+                <a href="common.html#io">
+            
+                    
+                    IO signal
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Motion.html">
+            
+                <a href="Motion.html">
+            
+                    
+                    3 Motion command
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="Motion.html">
+            
+                <a href="Motion.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="Motion.html">
+            
+                <a href="Motion.html#movj">
+            
+                    
+                    MovJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="Motion.html">
+            
+                <a href="Motion.html#movl">
+            
+                    
+                    MovL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="Motion.html">
+            
+                <a href="Motion.html#arc">
+            
+                    
+                    Arc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="Motion.html">
+            
+                <a href="Motion.html#circle">
+            
+                    
+                    Circle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="Motion.html">
+            
+                <a href="Motion.html#movjio">
+            
+                    
+                    MovJIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="Motion.html">
+            
+                <a href="Motion.html#movlio">
+            
+                    
+                    MovLIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="Motion.html">
+            
+                <a href="Motion.html#startpath">
+            
+                    
+                    StartPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="Motion.html">
+            
+                <a href="Motion.html#getpathstartpose">
+            
+                    
+                    GetPathStartPose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="Motion.html">
+            
+                <a href="Motion.html#positivekin">
+            
+                    
+                    PositiveKin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="Motion.html">
+            
+                <a href="Motion.html#inversekin">
+            
+                    
+                    InverseKin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html">
+            
+                    
+                    4 Relative motion command
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#relpointuser">
+            
+                    
+                    RelPointUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#relpointtool">
+            
+                    
+                    RelPointTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#relmovjtool">
+            
+                    
+                    RelMovJTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#relmovltool">
+            
+                    
+                    RelMovLTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#relmovjuser">
+            
+                    
+                    RelMovJUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#relmovluser">
+            
+                    
+                    RelMovLUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#reljointmovj">
+            
+                    
+                    RelJointMovJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#reljoint">
+            
+                    
+                    RelJoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html">
+            
+                    
+                    5 Motion parameter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#cp">
+            
+                    
+                    CP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#velj">
+            
+                    
+                    VelJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#accj">
+            
+                    
+                    AccJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#vell">
+            
+                    
+                    VelL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#accl">
+            
+                    
+                    AccL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#speedfactor">
+            
+                    
+                    SpeedFactor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#setpayload">
+            
+                    
+                    SetPayload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#user">
+            
+                    
+                    User
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#setuser">
+            
+                    
+                    SetUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#calcuser">
+            
+                    
+                    CalcUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#tool">
+            
+                    
+                    Tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#settool">
+            
+                    
+                    SetTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#calctool">
+            
+                    
+                    CalcTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#getpose">
+            
+                    
+                    GetPose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#getangle">
+            
+                    
+                    GetAngle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#getabz">
+            
+                    
+                    GetABZ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#checkmovj">
+            
+                    
+                    CheckMovJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#checkmovl">
+            
+                    
+                    CheckMovL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#setsafewallenable">
+            
+                    
+                    SetSafeWallEnable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.21" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#setworkzoneenable">
+            
+                    
+                    SetWorkZoneEnable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.22" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#setcollisionlevel">
+            
+                    
+                    SetCollisionLevel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.23" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#setbackdistance">
+            
+                    
+                    SetBackDistance
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="IO.html">
+            
+                <a href="IO.html">
+            
+                    
+                    6 IO
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="IO.html">
+            
+                <a href="IO.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="IO.html">
+            
+                <a href="IO.html#di">
+            
+                    
+                    DI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="IO.html">
+            
+                <a href="IO.html#digroup">
+            
+                    
+                    DIGroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="IO.html">
+            
+                <a href="IO.html#do">
+            
+                    
+                    DO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="IO.html">
+            
+                <a href="IO.html#dogroup">
+            
+                    
+                    DOGroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="IO.html">
+            
+                <a href="IO.html#getdo">
+            
+                    
+                    GetDO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="IO.html">
+            
+                <a href="IO.html#getdogroup">
+            
+                    
+                    GetDOGroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="IO.html">
+            
+                <a href="IO.html#ai">
+            
+                    
+                    AI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="IO.html">
+            
+                <a href="IO.html#ao">
+            
+                    
+                    AO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="IO.html">
+            
+                <a href="IO.html#getao">
+            
+                    
+                    GetAO
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="Tool.html">
+            
+                <a href="Tool.html">
+            
+                    
+                    7 Tool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="Tool.html">
+            
+                <a href="Tool.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="Tool.html">
+            
+                <a href="Tool.html#common">
+            
+                    
+                    General description
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="Tool.html">
+            
+                <a href="Tool.html#tooldi">
+            
+                    
+                    ToolDI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="Tool.html">
+            
+                <a href="Tool.html#tooldo">
+            
+                    
+                    ToolDO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="Tool.html">
+            
+                <a href="Tool.html#gettooldo">
+            
+                    
+                    GetToolDO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="Tool.html">
+            
+                <a href="Tool.html#toolai">
+            
+                    
+                    ToolAI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="Tool.html">
+            
+                <a href="Tool.html#settoolmode">
+            
+                    
+                    SetToolMode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="Tool.html">
+            
+                <a href="Tool.html#settoolpower">
+            
+                    
+                    SetToolPower
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="Tool.html">
+            
+                <a href="Tool.html#settool485">
+            
+                    
+                    SetTool485
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html">
+            
+                    
+                    8 TCP&UDP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#tcpcreate">
+            
+                    
+                    TCPCreate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#tcpstart">
+            
+                    
+                    TCPStart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#tcpread">
+            
+                    
+                    TCPRead
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#tcpwrite">
+            
+                    
+                    TCPWrite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#tcpdestroy">
+            
+                    
+                    TCPDestroy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#udpcreate">
+            
+                    
+                    UDPCreate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#udpread">
+            
+                    
+                    UDPRead
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#udpwrite">
+            
+                    
+                    UDPWrite
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="Modbus.html">
+            
+                <a href="Modbus.html">
+            
+                    
+                    9 Modbus
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="Modbus.html">
+            
+                <a href="Modbus.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="Modbus.html">
+            
+                <a href="Modbus.html#modbuscreate">
+            
+                    
+                    ModbusCreate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="Modbus.html">
+            
+                <a href="Modbus.html#modbusrtucreate">
+            
+                    
+                    ModbusRTUCreate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="Modbus.html">
+            
+                <a href="Modbus.html#modbusclose">
+            
+                    
+                    ModbusClose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="Modbus.html">
+            
+                <a href="Modbus.html#getinbits">
+            
+                    
+                    GetInBits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="Modbus.html">
+            
+                <a href="Modbus.html#getinregs">
+            
+                    
+                    GetInRegs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="Modbus.html">
+            
+                <a href="Modbus.html#getcoils">
+            
+                    
+                    GetCoils
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="Modbus.html">
+            
+                <a href="Modbus.html#setcoils">
+            
+                    
+                    SetCoils
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="Modbus.html">
+            
+                <a href="Modbus.html#getholdregs">
+            
+                    
+                    GetHoldRegs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="Modbus.html">
+            
+                <a href="Modbus.html#setholdregs">
+            
+                    
+                    SetHoldRegs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="Bus.html">
+            
+                <a href="Bus.html">
+            
+                    
+                    10 Bus register
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="Bus.html">
+            
+                <a href="Bus.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="Bus.html">
+            
+                <a href="Bus.html#getinputbool">
+            
+                    
+                    GetInputBool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="Bus.html">
+            
+                <a href="Bus.html#getinputint">
+            
+                    
+                    GetInputInt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="Bus.html">
+            
+                <a href="Bus.html#getinputfloat">
+            
+                    
+                    GetInputFloat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="Bus.html">
+            
+                <a href="Bus.html#getoutputbool">
+            
+                    
+                    GetOutputBool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="Bus.html">
+            
+                <a href="Bus.html#getoutputint">
+            
+                    
+                    GetOutputInt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="Bus.html">
+            
+                <a href="Bus.html#getoutputfloat">
+            
+                    
+                    GetOutputFloat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="Bus.html">
+            
+                <a href="Bus.html#setoutputbool">
+            
+                    
+                    SetOutputBool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="Bus.html">
+            
+                <a href="Bus.html#setoutputint">
+            
+                    
+                    SetOutputInt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="Bus.html">
+            
+                <a href="Bus.html#setoutputfloat">
+            
+                    
+                    SetOutputFloat
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html">
+            
+                    
+                    11 Program control
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#print">
+            
+                    
+                    Print
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#log">
+            
+                    
+                    Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#wait">
+            
+                    
+                    Wait
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#pause">
+            
+                    
+                    Pause
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#resetelapsedtime">
+            
+                    
+                    ResetElapsedTime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#elapsedtime">
+            
+                    
+                    ElapsedTime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#systime">
+            
+                    
+                    Systime
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="Safety Skin.html">
+            
+                <a href="Safety Skin.html">
+            
+                    
+                    12 SafeSkin
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="Safety Skin.html">
+            
+                <a href="Safety Skin.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="Safety Skin.html">
+            
+                <a href="Safety Skin.html#enablesafeskin">
+            
+                    
+                    EnableSafeSkin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="Safety Skin.html">
+            
+                <a href="Safety Skin.html#setsafeskin">
+            
+                    
+                    SetSafeSkin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../modbus_define.html">
+            
+                <a href="../modbus_define.html">
+            
+                    
+                    Appendix A Modbus Register Definition
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../modbus_define.html">
+            
+                <a href="../modbus_define.html#desc">
+            
+                    
+                    A.1 Modbus introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../modbus_define.html">
+            
+                <a href="../modbus_define.html#coil">
+            
+                    
+                    A.2 Coil register (map1, control robot)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../modbus_define.html">
+            
+                <a href="../modbus_define.html#contact">
+            
+                    
+                    A.3 Discrete input (map1, robot status)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../modbus_define.html">
+            
+                <a href="../modbus_define.html#input">
+            
+                    
+                    A.4 Input register (map1, robot real-time feedback data)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../modbus_define.html">
+            
+                <a href="../modbus_define.html#hold">
+            
+                    
+                    A.5 Holding register (map1, interaction between robot and PLC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<!-- <div class="book-header" role="navigation">
+    
+    
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >5 Motion parameter</a>
+    </h1>
+</div> -->
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="motion-parameters">Motion parameters</h1>
+<h3 class="lua-cmd" id="list">Command list</h3>
+
+<p>The motion parameters are used to set or obtain relevant motion parameters of the robot. Please read <a href="common.html">General description</a> before using the commands. </p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#cp">CP</a></td>
+<td>Set continuous path (CP) rate</td>
+</tr>
+<tr>
+<td><a href="#velj">VelJ</a></td>
+<td>Set velocity rate of joint motion</td>
+</tr>
+<tr>
+<td><a href="#accj">AccJ</a></td>
+<td>Set acceleration rate of joint motion</td>
+</tr>
+<tr>
+<td><a href="#vell">VelL</a></td>
+<td>Set velocity rate of linear and arc motion</td>
+</tr>
+<tr>
+<td><a href="#accl">AccL</a></td>
+<td>Set acceleration rate of linear and arc motion</td>
+</tr>
+<tr>
+<td><a href="#speedfactor">SpeedFactor</a></td>
+<td>Set global rate of robot arm</td>
+</tr>
+<tr>
+<td><a href="#setpayload">SetPayload</a></td>
+<td>Set end load</td>
+</tr>
+<tr>
+<td><a href="#user">User</a></td>
+<td>Set global user coordinate system</td>
+</tr>
+<tr>
+<td><a href="#setuser">SetUser</a></td>
+<td>Modify specified user coordinate system</td>
+</tr>
+<tr>
+<td><a href="#calcuser">CalcUser</a></td>
+<td>Calculate user coordinate system</td>
+</tr>
+<tr>
+<td><a href="#tool">Tool</a></td>
+<td>Switch global tool coordinate system</td>
+</tr>
+<tr>
+<td><a href="#settool">SetTool</a></td>
+<td>Modify specified tool coordinate system</td>
+</tr>
+<tr>
+<td><a href="#calctool">CalcTool</a></td>
+<td>Calculate tool coordinate system</td>
+</tr>
+<tr>
+<td><a href="#getpose">GetPose</a></td>
+<td>Get the real-time posture of the robot arm.</td>
+</tr>
+<tr>
+<td><a href="#getangle">GetAngle</a></td>
+<td>Get the real-time joint angle of the robot arm.</td>
+</tr>
+<tr>
+<td><a href="#getabz">GetABZ</a></td>
+<td>Get current position of encoder</td>
+</tr>
+<tr>
+<td><a href="#checkmovj">CheckMovJ</a></td>
+<td>Check operatibility of joint motion commands</td>
+</tr>
+<tr>
+<td><a href="#checkmovl">CheckMovL</a></td>
+<td>Check operatibility of linear or arc motion commands</td>
+</tr>
+<tr>
+<td><a href="#setsafewallenable">SetSafeWallEnable</a></td>
+<td>Switch on/off specified safety wall</td>
+</tr>
+<tr>
+<td><a href="#setworkzoneenable">SetWorkZoneEnable</a></td>
+<td>Switch on/off specified interference area</td>
+</tr>
+<tr>
+<td><a href="#setcollisionlevel">SetCollisionLevel</a></td>
+<td>Set collision detection level</td>
+</tr>
+<tr>
+<td><a href="#setbackdistance">SetBackDistance</a></td>
+<td>Set backoff distance of collision</td>
+</tr>
+</tbody>
+</table>
+<h3 class="lua-cmd" id="cp">CP</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">CP(R)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Set the continuous path (CP) rate, that is, when the robot arm moves continuously via multiple points, whether it transitions at a right angle or in a curved way when passing through the intermediate point.</p>
+<p>The CP rate set in this command is only valid in the current project, and it is 0 by default when not set.</p>
+<p><img src="images/move_cp.png" alt=""></p>
+<p><b>Required parameter:</b></p>
+<p>R: continuous path rate, range: [0, 100]</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- The robot moves from P1 to P3 via P2 with 50% continuous path rate. </span>
+CP(<span class="hljs-number">50</span>)
+Move(P1)
+Move(P2)
+Move(P3)
+</code></pre>
+<h3 class="lua-cmd" id="velj">VelJ</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">VelJ(R)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Set the velocity rate of joint motion (MovJ/MovJIO/RelMovJTool/RelMovJUser/RelJointMovJ). </p>
+<p>The velocity rate set in this command is only valid in the current project, and it is 100 by default when not set.</p>
+<p><b>Required parameter:</b></p>
+<p>R: velocity rate, range: [1,100]</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- The robot moves to P1 with 20% velocity rate.</span>
+VelJ(<span class="hljs-number">20</span>)
+MovJ(P1)
+</code></pre>
+<h3 class="lua-cmd" id="accj">AccJ</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">AccJ(R)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Set the acceleration rate of joint motion (MovJ/MovJIO/RelMovJTool/RelMovJUser/RelJointMovJ). </p>
+<p>The acceleration rate set in this command is only valid in the current project, and it is 100 by default when not set.</p>
+<p><b>Required parameter:</b></p>
+<p>R: acceleration rate, range: [1,100]</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- The robot moves to P1 with 50% acceleration rate.</span>
+AccJ(<span class="hljs-number">50</span>)
+MovJ(P1)
+</code></pre>
+<h3 class="lua-cmd" id="vell">VelL</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">VelL(R)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Set the velocity rate of linear and arc motion (MovL/Arc/Circle/MovLIO/RelMovLTool/RelMovLUser).</p>
+<p>The velocity rate set in this command is only valid in the current project, and it is 100 by default when not set.</p>
+<p><b>Required parameter:</b></p>
+<p>R: velocity rate, range: [1,100]</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- The robot moves to P1 with 20% velocity rate. </span>
+VelL(<span class="hljs-number">20</span>)
+MovL(P1)
+</code></pre>
+<h3 class="lua-cmd" id="accl">AccL</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">AccL(R)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Set the acceleration rate of linear and arc motion (MovL/Arc/Circle/MovLIO/RelMovLTool/RelMovLUser). </p>
+<p>The acceleration rate set in this command is only valid in the current project, and it is 100 by default when not set.</p>
+<p><b>Required parameter:</b></p>
+<p>R: acceleration rate, range: [1,100]</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- The robot moves to P1 with 50% acceleration rate. </span>
+AccL(<span class="hljs-number">50</span>)
+MovL(P1)
+</code></pre>
+<h3 class="lua-cmd" id="speedfactor">SpeedFactor</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">SpeedFactor(ratio)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Set the global rate of the robot arm. </p>
+<p>The global rate set by this command only takes effect when the current project is running. If it is not set, the value set in the software or TCP command before running the script will be adopted.</p>
+<p><b>Required parameter:</b></p>
+<p>ratio: velocity rate, range: (0,100)</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Set the global rate to 50%.</span>
+SpeedFactor(<span class="hljs-number">50</span>)
+</code></pre>
+<h3 class="lua-cmd" id="setpayload">SetPayload</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">SetPayload(payload, {x, y, z})
+SetPayload(name)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Set the weight and eccentric coordinates of the load, supporting setting directly or through preset parameter group. The parameters set by this command only take effect when the current project is running, overriding the previous settings. After the project stops running, the parameters restore to the original settings.</p>
+<p><b>Required parameter 1:</b></p>
+<ul>
+<li>payload: weight of the load, unit: kg</li>
+<li>{x, y, z}: eccentric coordinates of the load, see the figure below for the direction of coordinate axis. unit: mm</li>
+</ul>
+<p><img src="images/misalignment.png" alt=""></p>
+<p><b>Example 1:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Set the weight of the load to 1.5kg, and eccentric coordinates to {0, 0, 10}.</span>
+SetPayload(<span class="hljs-number">1.5</span>, {<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>})
+</code></pre>
+<p><b>Required parameter 2:</b></p>
+<ul>
+<li>name: Name of the preset load parameter group, which needs to be saved in the software first.</li>
+</ul>
+<p><img src="images/load.png" alt=""></p>
+<p><b>Example 2:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Set the load using the pre-set parameter &quot;load1&quot;. </span>
+SetPayload(<span class="hljs-string">&quot;load1&quot;</span>)
+</code></pre>
+<h3 class="lua-cmd" id="user">User</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">User(user)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Set the global user coordinate system. If you do not specify the user coordinate system through optional parameters when calling other commands, the global user coordinate system will be used.</p>
+<p>The global user coordinate system set by this command only takes effect when the current project is running. When it is not set, the default global user coordinate system is User coordinate system 0.</p>
+<p><b>Required parameter:</b></p>
+<p>User: user coordinate system after switch, specified through coordinate system index, which needs to be added in the software first.</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Switch the global coordinate system to User coordinate system 1.</span>
+User(<span class="hljs-number">1</span>)
+</code></pre>
+<h3 class="lua-cmd" id="setuser">SetUser</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">SetUser(index,<span class="hljs-built_in">table</span>)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Modify the specified user coordinate system. The coordinate system modified by this command only takes effect when the current project is running, and returns to the original value after the project stops running.</p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>index: user coordinate system index, range: [0,9]. The initial value 0 refers to the default user coordinate system.</li>
+<li>table: user coordinate system after modification (format: {x, y, z, rx, ry, rz}), which is recommended to obtain through &quot;CalcUser&quot; command. </li>
+</ul>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Modify the User coordinate system 1 to the coordinate system calculated by &quot;CalcUser&quot;</span>
+newUser = CalcUser(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,{<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>})
+SetUser(<span class="hljs-number">1</span>,newUser)
+</code></pre>
+<h3 class="lua-cmd" id="calcuser">CalcUser</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">CalcUser(index,matrix_direction,<span class="hljs-built_in">table</span>)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Calculate the user coordinate system.</p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>index: user coordinate system index, range: [0,9]. The initial value 0 refers to the default user coordinate system.</li>
+<li>matrix_direction: calculation method. <ul>
+<li>1: left multiplication, indicating that the coordinate system specified by &quot;index&quot; deflects the value specified by &quot;table&quot; along the base coordinate system.</li>
+<li>0: right multiplication, indicating that the coordinate system specified by &quot;index&quot; deflects the value specified by &quot;table&quot; along itself</li>
+</ul>
+</li>
+<li>table: user coordinate system offset (format: {x, y, z, rx, ry, rz})</li>
+</ul>
+<p><b>Return: </b></p>
+<p>user coordinate system after calculation (format: {x, y, z, rx, ry, rz})</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- The following calculation process can be equivalent to: A coordinate system with the same initial posture as User coordinate system 1, moves {x = 10, y = 10, z = 10} along the base coordinate system and rotates {rx = 10, ry = 10, rz = 10}, and the new coordinate system is newUser.</span>
+newUser = CalcUser(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,{<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>})
+</code></pre>
+<pre><code class="lang-lua"><span class="hljs-comment">-- The following calculation process can be equivalent to: A coordinate system with the same initial posture as User coordinate system 1, moves {x = 10, y = 10, z = 10} along User coordinate system 1 and rotates {rx = 10, ry = 10, rz = 10}, and the new coordinate system is newUser.</span>
+newUser = CalcUser(<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,{<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>})
+</code></pre>
+<h3 class="lua-cmd" id="tool">Tool</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">Tool(tool)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Switch the global tool coordinate system. If you do not specify the tool coordinate system through optional parameters when calling other commands, the global tool coordinate system will be used.</p>
+<p>The global tool coordinate system set by this command only takes effect when the current project is running. When it is not set, the default global tool coordinate system is Tool coordinate system 0.</p>
+<p><b>Required parameter:</b></p>
+<p>tool: tool coordinate system after switch, specified through coordinate system index, which needs to be added in the software first. If the specified coordinate system index does not exist, the project will stop running and an error will be reported.</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Switch the global coordinate system to Tool coordinate system 1.</span>
+Tool(<span class="hljs-number">1</span>)
+</code></pre>
+<h3 class="lua-cmd" id="settool">SetTool</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">SetTool(index,<span class="hljs-built_in">table</span>)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Modify the specified tool coordinate system. The coordinate system modified by this command only takes effect when the current project is running, and returns to the original value after the project stops running.</p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>index: tool coordinate system index, range: [0,9]. The initial value of coordinate system 0 is the default tool coordinate system.</li>
+<li>table: tool coordinate system after modification (format: {x, y, z, rx, ry, rz}), which is recommended to obtain through &quot;CalcTool&quot; command. </li>
+</ul>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Modify the Tool coordinate system 1 to the coordinate system calculated by &quot;CalcTool&quot;</span>
+newTool = CalcTool(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,{<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>})
+SetTool(<span class="hljs-number">1</span>,newTool)
+</code></pre>
+<h3 class="lua-cmd" id="calctool">CalcTool</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">CalcTool(index,matrix_direction,<span class="hljs-built_in">table</span>)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Calculate the tool coordinate system.</p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>index: tool coordinate system index, range: [0,9]. The initial value 0 refers to the default user coordinate system.</li>
+<li>matrix_direction: calculation method. <ul>
+<li>1: left multiplication, indicating that the coordinate system specified by &quot;index&quot; deflects the value specified by &quot;table&quot; along the flange coordinate system (TCP0).</li>
+<li>0: right multiplication, indicating that the coordinate system specified by &quot;index&quot; deflects the value specified by &quot;table&quot; along itself.</li>
+</ul>
+</li>
+<li>table: tool coordinate system offset (format: {x, y, z, rx, ry, rz})</li>
+</ul>
+<p><b>Return: </b></p>
+<p>tool coordinate system after calculation (format: {x, y, z, rx, ry, rz})</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- The following calculation process can be equivalent to: A coordinate system with the same initial posture as Tool coordinate system 1, moves {x = 10, y = 10, z = 10} along the flange coordinate system (TCP0) and rotates {rx = 10, ry = 10, rz = 10}, and the new coordinate system is newTool.</span>
+newTool = CalcTool(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,{<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>})
+</code></pre>
+<pre><code class="lang-lua"><span class="hljs-comment">-- The following calculation process can be equivalent to: A coordinate system with the same initial posture as Tool coordinate system 1, moves {x=10, y=10, z=10} along Tool coordinate system 1 and rotates {rx=10, ry=10, rz=10}, and the new coordinate system is newTool.</span>
+newTool = CalcTool(<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,{<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>,<span class="hljs-number">10</span>})
+</code></pre>
+<h3 class="lua-cmd" id="getpose">GetPose</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">GetPose(user_index, tool_index)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Get the real-time posture of the robot arm.</p>
+<p>If the command is called between two motion commands, the obtained point will be affected by the continuous path settings.</p>
+<ul>
+<li>If the continuous path is switched off (cp or r is 0), the target point will be obtained accurately.</li>
+<li>If the continuous path is switched on, a point on the transition curve will be obtained.</li>
+</ul>
+<p><b>Optional parameter:</b></p>
+<ul>
+<li>user_index: user coordinate system index corresponding to the posture. The coordinate system needs to be added in the software first. The global user coordinate system will be used when the index is not set.</li>
+<li>tool_index: tool coordinate system index corresponding to the posture. The coordinate system needs to be added in the software first. The global tool coordinate system will be used when the index is not set.</li>
+</ul>
+<p><b>Return:</b></p>
+<p>Current posture of the robot arm: {pose = {x, y, z, rx, ry, rz}}</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- The robot moves to P1, and then returns to the current posture. </span>
+<span class="hljs-keyword">local</span> currentPose = GetPose()
+MovJ(P1)
+MovJ(currentPose)
+</code></pre>
+<pre><code class="lang-lua"><span class="hljs-comment">-- The robot moves to P1. Get P1 posture. Then the robot moves to P2.</span>
+MovJ(P1,{cp=<span class="hljs-number">0</span>})
+<span class="hljs-keyword">local</span> currentPose = GetPose() <span class="hljs-comment">--Obtain P1 posture</span>
+MovJ(P2)
+</code></pre>
+<h3 class="lua-cmd" id="getangle">GetAngle</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">GetAngle()
+</code></pre>
+<p><b>Description:</b></p>
+<p>Get the real-time joint angle of the robot arm. </p>
+<p>If the command is called between two motion commands, the obtained point will be affected by the continuous path settings.</p>
+<ul>
+<li>If the continuous path is switched off (cp or r is 0), the joint angle of the target point will be obtained accurately.</li>
+<li>If the continuous path is switched on, the joint angle of a point on the transition curve will be obtained.</li>
+</ul>
+<p><b>Return:</b></p>
+<p>Current joint angle of the robot arm: {joint = {j1, j2, j3, j4, j5, j6} }</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- The robot moves to P1, and then returns to the current posture. </span>
+<span class="hljs-keyword">local</span> currentAngle = GetAngle()
+MovJ(P1)
+MovJ(currentAngle)
+</code></pre>
+<pre><code class="lang-lua"><span class="hljs-comment">-- The robot moves to P1. Get P1 posture. Then the robot moves to P2. </span>
+MovJ(P1,{cp=<span class="hljs-number">0</span>})
+<span class="hljs-keyword">local</span> currentAngle = GetAngle()  <span class="hljs-comment">--Get joint angle of P1 </span>
+MovJ(P2)
+</code></pre>
+<h3 class="lua-cmd" id="getabz">GetABZ</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">GetABZ()
+</code></pre>
+<p><b>Description:</b></p>
+<p>Get the current position of the encoder. </p>
+<p><b>Return:</b></p>
+<p>Current position of the encoder</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Get the current position of the ABZ encoder and assign the value to the variable &quot;abz&quot;.</span>
+<span class="hljs-keyword">local</span> abz = GetABZ()
+</code></pre>
+<h3 class="lua-cmd" id="checkmovj">CheckMovJ</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">CheckMovJ(P, {user = <span class="hljs-number">1</span>, tool = <span class="hljs-number">0</span>, a = <span class="hljs-number">20</span>, v = <span class="hljs-number">50</span>, cp = <span class="hljs-number">100</span>})
+</code></pre>
+<p><b>Description:</b></p>
+<p>Check the operability of the joint motion from the current point to the target point. The system will calculate the entire motion trajectory and check whether there are unreachable points in the trajectory.</p>
+<p><b>Required parameter:</b></p>
+<p>P: target point</p>
+<p><b>Optional parameter:</b></p>
+<ul>
+<li>user: user coordinate system index of the target point</li>
+<li>tool: tool coordinate system index of the target point</li>
+<li>a: acceleration rate, range: (0,100]</li>
+<li>v: velocity rate, range: (0,100]</li>
+<li>cp: continuous path rate, range: [0,100] </li>
+</ul>
+<p>See <a href="common.html">General description</a> for details.</p>
+<p><b>Return:</b></p>
+<p>Check result.</p>
+<ul>
+<li>0: no error</li>
+<li>16: End point closed to shoulder singularity point</li>
+<li>17: End point inverse kinematics error with no solution</li>
+<li>18: Inverse kinematics error with result out of working area</li>
+<li>22: Arm orientation error</li>
+<li>26: End point closed to wrist singularity point</li>
+<li>27: End point closed to elbow singularity point</li>
+<li>29: Speed parameter error</li>
+<li>32: Shoulder singularity point in trajectory </li>
+<li>33: Inverse kinematics error with no solution in trajectory</li>
+<li>34: Inverse kinematics error with result out of working area in trajectory</li>
+<li>35: Wrist singularity point in trajectory</li>
+<li>36: Elbow singularity point in trajectory</li>
+<li>37: Joint angle is changed over 180 degrees</li>
+</ul>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Check whether the robot arm can reach P1 through joint motion with the default setting. If it can, move to P1 through joint motion.</span>
+<span class="hljs-keyword">local</span> status=CheckMovJ(P1)
+<span class="hljs-keyword">if</span>(status==<span class="hljs-number">0</span>)
+<span class="hljs-keyword">then</span>
+    MovJ(P1)
+    status=CheckMovJ(P2) <span class="hljs-comment">-- Perform the feasibility check from P1 to P2 after the robot arm moves to P1</span>
+    <span class="hljs-keyword">if</span>(status==<span class="hljs-number">0</span>)
+    <span class="hljs-keyword">then</span>
+        MovJ(P2)
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h3 class="lua-cmd" id="checkmovl">CheckMovL</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">CheckMovL(P, {user = <span class="hljs-number">1</span>, tool = <span class="hljs-number">0</span>, a = <span class="hljs-number">20</span>, v = <span class="hljs-number">50</span>, cp = <span class="hljs-number">100</span>, r = <span class="hljs-number">5</span>})
+</code></pre>
+<p><b>Description:</b></p>
+<p>Check the operability of the linear motion from the current point to the target point. The system will calculate the entire motion trajectory and check whether there are unreachable points in the trajectory.</p>
+<p><b>Required parameter:</b></p>
+<p>P: target point</p>
+<p><b>Optional parameter:</b></p>
+<ul>
+<li>user: user coordinate system index of the target point</li>
+<li>tool: tool coordinate system index of the target point</li>
+<li>a: acceleration rate, range: (0,100]</li>
+<li>v: velocity rate, incompatible with speed. range: (0,100]</li>
+<li>speed: target speed, incompatible with v (if both speed and v exist, speed takes precedence). range: [1,maximum motion speed], unit: mm/s </li>
+<li>cp: continuous path rate, incompatible with r. range: [0,100] </li>
+<li>r: continuous path radius, incompatible with cp. range: [0,100], unit: mm </li>
+</ul>
+<p>See <a href="common.html">General description</a> for details.</p>
+<p><b>Return:</b></p>
+<p>Check result.</p>
+<ul>
+<li>0: no error</li>
+<li>16: End point closed to shoulder singularity point</li>
+<li>17: End point inverse kinematics error with no solution</li>
+<li>18: Inverse kinematics error with result out of working area</li>
+<li>22: Arm orientation error</li>
+<li>26: End point closed to wrist singularity point</li>
+<li>27: End point closed to elbow singularity point</li>
+<li>29: Speed parameter error</li>
+<li>32: Shoulder singularity point in trajectory </li>
+<li>33: Inverse kinematics error with no solution in trajectory</li>
+<li>34: Inverse kinematics error with result out of working area in trajectory</li>
+<li>35: Wrist singularity point in trajectory</li>
+<li>36: Elbow singularity point in trajectory</li>
+<li>37: Joint angle is changed over 180 degrees</li>
+</ul>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Check whether the robot arm can reach P1 through linear motion with the default setting. If it can, move to P1 through linear motion.</span>
+<span class="hljs-keyword">local</span> status=CheckMovL(P1)
+<span class="hljs-keyword">if</span>(status==<span class="hljs-number">0</span>)
+<span class="hljs-keyword">then</span>
+    MovL(P1)
+    status=CheckMovL(P2) <span class="hljs-comment">-- Perform the feasibility check from P1 to P2 after the robot arm moves to P1</span>
+    <span class="hljs-keyword">if</span>(status==<span class="hljs-number">0</span>)
+    <span class="hljs-keyword">then</span>
+        MovL(P2)
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h3 class="lua-cmd" id="setsafewallenable">SetSafeWallEnable</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">SetSafeWallEnable(index,value)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Switch on/off the specified safety wall. The safety wall status set through this command only takes effect when the current project is running, and will restore to the original value after the project stops.</p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>index: safety wall index, which needs to be added in the software first. range: [1,8]</li>
+<li>value&#xFF1A;<ul>
+<li>true: switch on safety wall</li>
+<li>false: switch off safety wall</li>
+</ul>
+</li>
+</ul>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Switch on No.1 safety wall. </span>
+SetSafeWallEnable(<span class="hljs-number">1</span>,<span class="hljs-keyword">true</span>)
+</code></pre>
+<h3 class="lua-cmd" id="setworkzoneenable">SetWorkZoneEnable</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">SetWorkZoneEnable(index,value)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Switch on/off the specified interference area. The interference area status set through this command only takes effect when the current project is running, and will restore to the original value after the project stops.</p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>index: interference area index, which needs to be added in the software first. range: [1,6]</li>
+<li>value&#xFF1A;<ul>
+<li>true: switch on interference area</li>
+<li>false: switch off interference area</li>
+</ul>
+</li>
+</ul>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Switch on No.1 interference area. </span>
+SetWorkZoneEnable(<span class="hljs-number">1</span>,<span class="hljs-keyword">true</span>)
+</code></pre>
+<h3 class="lua-cmd" id="setcollisionlevel">SetCollisionLevel</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">SetCollisionLevel(level)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Set the collision detection level. The value set through this command only takes effect when the current project is running, and will restore to the original value after the project stops.</p>
+<p><b>Required parameter:</b></p>
+<p>Level: collision detection level. 0: switching off collision detection, 1~5: the larger the number, the higher the sensitivity.</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Set the collision detection level to 3.</span>
+SetCollisionLevel(<span class="hljs-number">3</span>)
+</code></pre>
+<h3 class="lua-cmd" id="setbackdistance">SetBackDistance</h3>
+
+<p><b>Command:</b></p>
+<pre><code class="lang-lua">SetBackDistance(distance)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Set the backoff distance after the robot detects collision. The value set through this command only takes effect when the current project is running, and will restore to the original value after the project stops.</p>
+<p><b>Required parameter:</b></p>
+<p>distance: collision backoff distance, range: [0,50], unit: mm</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Set the collision backoff distance to 20mm.</span>
+SetBackDistance(<span class="hljs-number">20</span>)
+</code></pre>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+<!--             
+                
+                <a href="Motion Relative.html#reljoint" class="navigation navigation-prev " aria-label="Previous page: RelJoint">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Motion Params.html#list" class="navigation navigation-next " aria-label="Next page: Command list">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+             -->
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5 Motion parameter","level":"1.6","depth":1,"next":{"title":"Command list","level":"1.6.1","depth":2,"anchor":"#list","path":"script/Motion Params.md","ref":"script/Motion Params.md#list","articles":[]},"previous":{"title":"RelJoint","level":"1.5.9","depth":2,"anchor":"#reljoint","path":"script/Motion Relative.md","ref":"script/Motion Relative.md#reljoint","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","-lunr","-search","search-pro","splitter","-page-treeview","-disqus","-sharing","-mermaid","-prism","highlight","flexible-alerts","code","-pageview-count","-auto-scroll-table","back-to-top-button","popup","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"popup":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Times New Roman","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Homepage":"https://www.dobot.cn/"}},"gitbook":"*"},"file":{"path":"script/Motion Params.md","mtime":"2023-07-26T09:37:51.836Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-28T07:51:29.019Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

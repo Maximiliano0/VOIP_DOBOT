@@ -1,0 +1,2345 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>9 Modbus · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Modbus.html" />
+    
+    
+    <link rel="prev" href="TCP&UDP.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.dobot.cn/" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="lua.html">
+            
+                <a href="lua.html">
+            
+                    
+                    1 Lua basic grammar
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Base.html">
+            
+                <a href="Base.html">
+            
+                    
+                    Variable and data type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="lua_operator.html">
+            
+                <a href="lua_operator.html">
+            
+                    
+                    Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="lua_control.html">
+            
+                <a href="lua_control.html">
+            
+                    
+                    Process control
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="common.html">
+            
+                <a href="common.html">
+            
+                    
+                    2 General description
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="common.html">
+            
+                <a href="common.html#motion_type">
+            
+                    
+                    Motion mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="common.html">
+            
+                <a href="common.html#point">
+            
+                    
+                    Point parameter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="common.html">
+            
+                <a href="common.html#coord">
+            
+                    
+                    Coordinate system parameter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="common.html">
+            
+                <a href="common.html#speed">
+            
+                    
+                    Speed parameter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="common.html">
+            
+                <a href="common.html#cp_r">
+            
+                    
+                    CP parameter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="common.html">
+            
+                <a href="common.html#io">
+            
+                    
+                    IO signal
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="Motion.html">
+            
+                <a href="Motion.html">
+            
+                    
+                    3 Motion command
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="Motion.html">
+            
+                <a href="Motion.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="Motion.html">
+            
+                <a href="Motion.html#movj">
+            
+                    
+                    MovJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="Motion.html">
+            
+                <a href="Motion.html#movl">
+            
+                    
+                    MovL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="Motion.html">
+            
+                <a href="Motion.html#arc">
+            
+                    
+                    Arc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="Motion.html">
+            
+                <a href="Motion.html#circle">
+            
+                    
+                    Circle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="Motion.html">
+            
+                <a href="Motion.html#movjio">
+            
+                    
+                    MovJIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="Motion.html">
+            
+                <a href="Motion.html#movlio">
+            
+                    
+                    MovLIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="Motion.html">
+            
+                <a href="Motion.html#startpath">
+            
+                    
+                    StartPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="Motion.html">
+            
+                <a href="Motion.html#getpathstartpose">
+            
+                    
+                    GetPathStartPose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="Motion.html">
+            
+                <a href="Motion.html#positivekin">
+            
+                    
+                    PositiveKin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="Motion.html">
+            
+                <a href="Motion.html#inversekin">
+            
+                    
+                    InverseKin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html">
+            
+                    
+                    4 Relative motion command
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#relpointuser">
+            
+                    
+                    RelPointUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#relpointtool">
+            
+                    
+                    RelPointTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#relmovjtool">
+            
+                    
+                    RelMovJTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#relmovltool">
+            
+                    
+                    RelMovLTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#relmovjuser">
+            
+                    
+                    RelMovJUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#relmovluser">
+            
+                    
+                    RelMovLUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#reljointmovj">
+            
+                    
+                    RelJointMovJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="Motion Relative.html">
+            
+                <a href="Motion Relative.html#reljoint">
+            
+                    
+                    RelJoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html">
+            
+                    
+                    5 Motion parameter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#cp">
+            
+                    
+                    CP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#velj">
+            
+                    
+                    VelJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#accj">
+            
+                    
+                    AccJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#vell">
+            
+                    
+                    VelL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#accl">
+            
+                    
+                    AccL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#speedfactor">
+            
+                    
+                    SpeedFactor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#setpayload">
+            
+                    
+                    SetPayload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#user">
+            
+                    
+                    User
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#setuser">
+            
+                    
+                    SetUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#calcuser">
+            
+                    
+                    CalcUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#tool">
+            
+                    
+                    Tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#settool">
+            
+                    
+                    SetTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#calctool">
+            
+                    
+                    CalcTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#getpose">
+            
+                    
+                    GetPose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#getangle">
+            
+                    
+                    GetAngle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#getabz">
+            
+                    
+                    GetABZ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#checkmovj">
+            
+                    
+                    CheckMovJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#checkmovl">
+            
+                    
+                    CheckMovL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#setsafewallenable">
+            
+                    
+                    SetSafeWallEnable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.21" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#setworkzoneenable">
+            
+                    
+                    SetWorkZoneEnable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.22" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#setcollisionlevel">
+            
+                    
+                    SetCollisionLevel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.23" data-path="Motion Params.html">
+            
+                <a href="Motion Params.html#setbackdistance">
+            
+                    
+                    SetBackDistance
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="IO.html">
+            
+                <a href="IO.html">
+            
+                    
+                    6 IO
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="IO.html">
+            
+                <a href="IO.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="IO.html">
+            
+                <a href="IO.html#di">
+            
+                    
+                    DI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="IO.html">
+            
+                <a href="IO.html#digroup">
+            
+                    
+                    DIGroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="IO.html">
+            
+                <a href="IO.html#do">
+            
+                    
+                    DO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="IO.html">
+            
+                <a href="IO.html#dogroup">
+            
+                    
+                    DOGroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="IO.html">
+            
+                <a href="IO.html#getdo">
+            
+                    
+                    GetDO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="IO.html">
+            
+                <a href="IO.html#getdogroup">
+            
+                    
+                    GetDOGroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="IO.html">
+            
+                <a href="IO.html#ai">
+            
+                    
+                    AI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="IO.html">
+            
+                <a href="IO.html#ao">
+            
+                    
+                    AO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="IO.html">
+            
+                <a href="IO.html#getao">
+            
+                    
+                    GetAO
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="Tool.html">
+            
+                <a href="Tool.html">
+            
+                    
+                    7 Tool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="Tool.html">
+            
+                <a href="Tool.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="Tool.html">
+            
+                <a href="Tool.html#common">
+            
+                    
+                    General description
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="Tool.html">
+            
+                <a href="Tool.html#tooldi">
+            
+                    
+                    ToolDI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="Tool.html">
+            
+                <a href="Tool.html#tooldo">
+            
+                    
+                    ToolDO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="Tool.html">
+            
+                <a href="Tool.html#gettooldo">
+            
+                    
+                    GetToolDO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="Tool.html">
+            
+                <a href="Tool.html#toolai">
+            
+                    
+                    ToolAI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="Tool.html">
+            
+                <a href="Tool.html#settoolmode">
+            
+                    
+                    SetToolMode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="Tool.html">
+            
+                <a href="Tool.html#settoolpower">
+            
+                    
+                    SetToolPower
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="Tool.html">
+            
+                <a href="Tool.html#settool485">
+            
+                    
+                    SetTool485
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html">
+            
+                    
+                    8 TCP&UDP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#tcpcreate">
+            
+                    
+                    TCPCreate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#tcpstart">
+            
+                    
+                    TCPStart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#tcpread">
+            
+                    
+                    TCPRead
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#tcpwrite">
+            
+                    
+                    TCPWrite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#tcpdestroy">
+            
+                    
+                    TCPDestroy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#udpcreate">
+            
+                    
+                    UDPCreate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#udpread">
+            
+                    
+                    UDPRead
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="TCP&UDP.html">
+            
+                <a href="TCP&UDP.html#udpwrite">
+            
+                    
+                    UDPWrite
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.10" data-path="Modbus.html">
+            
+                <a href="Modbus.html">
+            
+                    
+                    9 Modbus
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="Modbus.html">
+            
+                <a href="Modbus.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="Modbus.html">
+            
+                <a href="Modbus.html#modbuscreate">
+            
+                    
+                    ModbusCreate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="Modbus.html">
+            
+                <a href="Modbus.html#modbusrtucreate">
+            
+                    
+                    ModbusRTUCreate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="Modbus.html">
+            
+                <a href="Modbus.html#modbusclose">
+            
+                    
+                    ModbusClose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="Modbus.html">
+            
+                <a href="Modbus.html#getinbits">
+            
+                    
+                    GetInBits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="Modbus.html">
+            
+                <a href="Modbus.html#getinregs">
+            
+                    
+                    GetInRegs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="Modbus.html">
+            
+                <a href="Modbus.html#getcoils">
+            
+                    
+                    GetCoils
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="Modbus.html">
+            
+                <a href="Modbus.html#setcoils">
+            
+                    
+                    SetCoils
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="Modbus.html">
+            
+                <a href="Modbus.html#getholdregs">
+            
+                    
+                    GetHoldRegs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="Modbus.html">
+            
+                <a href="Modbus.html#setholdregs">
+            
+                    
+                    SetHoldRegs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="Bus.html">
+            
+                <a href="Bus.html">
+            
+                    
+                    10 Bus register
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="Bus.html">
+            
+                <a href="Bus.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="Bus.html">
+            
+                <a href="Bus.html#getinputbool">
+            
+                    
+                    GetInputBool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="Bus.html">
+            
+                <a href="Bus.html#getinputint">
+            
+                    
+                    GetInputInt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="Bus.html">
+            
+                <a href="Bus.html#getinputfloat">
+            
+                    
+                    GetInputFloat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="Bus.html">
+            
+                <a href="Bus.html#getoutputbool">
+            
+                    
+                    GetOutputBool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="Bus.html">
+            
+                <a href="Bus.html#getoutputint">
+            
+                    
+                    GetOutputInt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="Bus.html">
+            
+                <a href="Bus.html#getoutputfloat">
+            
+                    
+                    GetOutputFloat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="Bus.html">
+            
+                <a href="Bus.html#setoutputbool">
+            
+                    
+                    SetOutputBool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="Bus.html">
+            
+                <a href="Bus.html#setoutputint">
+            
+                    
+                    SetOutputInt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="Bus.html">
+            
+                <a href="Bus.html#setoutputfloat">
+            
+                    
+                    SetOutputFloat
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html">
+            
+                    
+                    11 Program control
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#print">
+            
+                    
+                    Print
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#log">
+            
+                    
+                    Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#wait">
+            
+                    
+                    Wait
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#pause">
+            
+                    
+                    Pause
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#resetelapsedtime">
+            
+                    
+                    ResetElapsedTime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#elapsedtime">
+            
+                    
+                    ElapsedTime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="Program Manage.html">
+            
+                <a href="Program Manage.html#systime">
+            
+                    
+                    Systime
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="Safety Skin.html">
+            
+                <a href="Safety Skin.html">
+            
+                    
+                    12 SafeSkin
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="Safety Skin.html">
+            
+                <a href="Safety Skin.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="Safety Skin.html">
+            
+                <a href="Safety Skin.html#enablesafeskin">
+            
+                    
+                    EnableSafeSkin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="Safety Skin.html">
+            
+                <a href="Safety Skin.html#setsafeskin">
+            
+                    
+                    SetSafeSkin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="../modbus_define.html">
+            
+                <a href="../modbus_define.html">
+            
+                    
+                    Appendix A Modbus Register Definition
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="../modbus_define.html">
+            
+                <a href="../modbus_define.html#desc">
+            
+                    
+                    A.1 Modbus introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="../modbus_define.html">
+            
+                <a href="../modbus_define.html#coil">
+            
+                    
+                    A.2 Coil register (map1, control robot)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="../modbus_define.html">
+            
+                <a href="../modbus_define.html#contact">
+            
+                    
+                    A.3 Discrete input (map1, robot status)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="../modbus_define.html">
+            
+                <a href="../modbus_define.html#input">
+            
+                    
+                    A.4 Input register (map1, robot real-time feedback data)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="../modbus_define.html">
+            
+                <a href="../modbus_define.html#hold">
+            
+                    
+                    A.5 Holding register (map1, interaction between robot and PLC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<!-- <div class="book-header" role="navigation">
+    
+    
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >9 Modbus</a>
+    </h1>
+</div> -->
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="modbus">Modbus</h1>
+<p></p><h3 class="lua-cmd" id="list">Command list</h3>
+The Modbus commands are used for Modbus communication. For the range and definition of the register address, please refer to the instructions of the corresponding slave.<p></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#modbuscreate">ModbusCreate</a></td>
+<td>Create Modbus master station</td>
+</tr>
+<tr>
+<td><a href="#modbusrtucreate">ModbusRTUCreate</a></td>
+<td>Create Modbus master based on RS485</td>
+</tr>
+<tr>
+<td><a href="#modbusclose">ModbusClose</a></td>
+<td>Disconnect with Modbus slave station</td>
+</tr>
+<tr>
+<td><a href="#getinbits">GetInBits</a></td>
+<td>Read discrete input</td>
+</tr>
+<tr>
+<td><a href="#getinregs">GetInRegs</a></td>
+<td>Read input register</td>
+</tr>
+<tr>
+<td><a href="#getcoils">GetCoils</a></td>
+<td>Read coil register</td>
+</tr>
+<tr>
+<td><a href="#setcoils">SetCoils</a></td>
+<td>Write to coil register</td>
+</tr>
+<tr>
+<td><a href="#getholdregs">GetHoldRegs</a></td>
+<td>Read holding register</td>
+</tr>
+<tr>
+<td><a href="#setholdregs">SetHoldRegs</a></td>
+<td>Write to holding register</td>
+</tr>
+</tbody>
+</table>
+<p>The Modbus function codes corresponding to various registers follow the standard Modbus protocol. </p>
+<table width="100%">
+  <colgroup>
+    <col style="width: 25%">
+    <col style="width: 25%">
+    <col style="width: 25%">
+    <col style="width: 25%">
+  </colgroup>
+  <tr>
+    <th>Register type</th>
+    <th>Read register</th>
+    <th>Write single register</th>
+    <th>Write multiple registers</th>
+  </tr>
+  <tr>
+    <td>Coil register</td>
+    <td>01</td>
+    <td>05</td>
+    <td>0F</td>
+  </tr>
+  <tr>
+    <td>Contact register</td>
+    <td>01</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Input register</td>
+    <td>04</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Holding register</td>
+    <td>04</td>
+    <td>06</td>
+    <td>10</td>
+  </tr>
+</table> 
+
+
+<p></p><h3 class="lua-cmd" id="modbuscreate">ModbusCreate</h3>
+<b>Command:</b><p></p>
+<pre><code class="lang-lua">ModbusCreate(IP, port, slave_id, isRTU)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Create Modbus master station, and establish connection with the slave station (supporting up to 15 slaves). </p>
+<p>When connecting to the robot slave, set the IP to the robot IP (default: 192.168.5.1, modifiable) and set the port to 502 (map1) or 1502 (map2). See <a href="../modbus_define.html">Appendix A Modbus Register Definition</a> for details.</p>
+<p>When connecting to a third-party slave, please refer to the instructions of the corresponding slave for the register address range and definition when reading and writing registers. </p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>IP: IP address of slave station</li>
+<li>port: port of slave station </li>
+</ul>
+<p><b>Optional parameter:</b></p>
+<ul>
+<li>slave_id: slave ID</li>
+<li>isRTU: boolean. If it is not carried or false, establish modbusTCP communication; if it is true, establish modbusRTU communication.</li>
+</ul>
+<div class="caution1"><img src="../image/caution.png" height="18"><b>NOTE</b><div>This parameter determines the protocol format used to transmit data after the connection is established, and does not affect the connection result. Therefore, if you set the parameter incorrectly when creating the master, the master can still be created successfully, but there may be exception in the subsequent communication.</div></div>
+
+<p><b>Return:</b></p>
+<ul>
+<li><p>err: </p>
+<ul>
+<li>0: Modbus master has been created successfully.</li>
+<li>1: As the created masters have reached the maximum number, a new master failed to be created.</li>
+<li>2: Modbus master failed to be initialized. It is recommended to check whether the IP, port and network is normal.</li>
+<li>3: Modbus slave failed to be connected. It is recommended to check whether the slave is established properly and whether the network is normal.</li>
+</ul>
+</li>
+<li><p>id: master station ID, which is used when other Modbus commands are called. range: [0, 14]</p>
+</li>
+</ul>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Create the Modbus master, and connect with the specified slave.</span>
+<span class="hljs-keyword">local</span> ip=<span class="hljs-string">&quot;192.168.5.123&quot;</span> 
+<span class="hljs-keyword">local</span> port=<span class="hljs-number">503</span>
+<span class="hljs-keyword">local</span> err=<span class="hljs-number">0</span>
+<span class="hljs-keyword">local</span> id=<span class="hljs-number">0</span>
+err, id = ModbusCreate(ip, port, <span class="hljs-number">1</span>)
+</code></pre>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Create the Modbus master, and connect with the robot slave.</span>
+<span class="hljs-keyword">local</span> ip=<span class="hljs-string">&quot;192.168.5.1&quot;</span> 
+<span class="hljs-keyword">local</span> port=<span class="hljs-number">502</span>
+<span class="hljs-keyword">local</span> err=<span class="hljs-number">0</span>
+<span class="hljs-keyword">local</span> id=<span class="hljs-number">0</span>
+err, id = ModbusCreate(ip, port)
+</code></pre>
+<p></p><h3 class="lua-cmd" id="modbusrtucreate">ModbusRTUCreate</h3>
+<b>Command:</b><p></p>
+<pre><code class="lang-lua">ModbusRTUCreate(slave_id, baud, parity, data_bit, stop_bit)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Create Modbus master based on RS485, and establish connection with slave station (supporting up to 15 slaves). </p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>slave_id: slave ID</li>
+<li>baud: RS485 baud rate</li>
+</ul>
+<p><b>Optional parameter:</b></p>
+<ul>
+<li>parity: whether there are parity bits. &quot;O&quot; means odd, &quot;E&quot; means even, and &quot;N&quot; means no parity bits (&quot;E&quot; by default)</li>
+<li>data_bit: data bit length. range: 8 (8 by default)</li>
+<li>stopbit: stop bit length. range: 1, 2 (1 by default)</li>
+</ul>
+<p><b>Return:</b></p>
+<ul>
+<li>err: <ul>
+<li>0: Modbus master station has been created successfully.</li>
+<li>1: Modbus master station failed to be created.</li>
+</ul>
+</li>
+<li>id: master station ID, which is used when other Modbus commands are called.</li>
+</ul>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Create Modbus master, and establish connection with the slave station through RS485. The slave ID is 1 and baud rate is 115200.</span>
+err, id = ModbusRTUCreate(<span class="hljs-number">1</span>, <span class="hljs-number">115200</span>)
+</code></pre>
+<p></p><h3 class="lua-cmd" id="modbusclose">ModbusClose</h3>
+<b>Command:</b><p></p>
+<pre><code class="lang-lua">ModbusClose(id)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Disconnect with Modbus slave station and release the master station.</p>
+<p><b>Required parameter:</b></p>
+<p>id: master ID</p>
+<p><b>Return:</b></p>
+<ul>
+<li>0: The Modbus slave has been disconnected successfully.</li>
+<li>1: The Modbus slave failed to be disconnected.</li>
+</ul>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Disconnect with the Modbus slave.</span>
+ModbusClose(id)
+</code></pre>
+<p></p><h3 class="lua-cmd" id="getinbits">GetInBits</h3>
+<b>Command:</b><p></p>
+<pre><code class="lang-lua">GetInBits(id, addr, count)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Read the discrete input value from the Modbus slave. The corresponding Modbus function code is 02.</p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>id: master ID</li>
+<li>addr: starting address of the discrete input</li>
+<li>count: number of discrete inputs, range: 1~2000 (ModbusTCP protocol restriction. For actual range, please determine according to the number of slave registers or the protocol)</li>
+</ul>
+<p><b>Return:</b></p>
+<p>Discrete input value stored in a table, where the first value in the table corresponds to the discrete input value at the starting address.</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Read 5 discrete inputs starting from address 0.</span>
+inBits = GetInBits(id,<span class="hljs-number">0</span>,<span class="hljs-number">5</span>)
+</code></pre>
+<p></p><h3 class="lua-cmd" id="getinregs">GetInRegs</h3>
+<b>Command:</b><p></p>
+<pre><code class="lang-lua">GetInRegs(id, addr, count, <span class="hljs-built_in">type</span>)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Read the input register value with the specified data type from the Modbus slave. The corresponding Modbus function code is 04.</p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>id: master ID</li>
+<li>addr: starting address of the input registers</li>
+<li>count: number of input register values, range: 1~125 (ModbusTCP protocol restriction. For actual range, please determine according to the number of slave registers or the protocol)</li>
+</ul>
+<p><b>Optional parameter:</b></p>
+<p>type: data type</p>
+<ul>
+<li>Empty: U16 by default</li>
+<li>U16: 16-bit unsigned integer (two bytes, occupy one register)</li>
+<li>U32: 32-bit unsigned integer (four bytes, occupy two registers)</li>
+<li>F32: 32-bit single-precision floating-point number (four bytes, occupy two registers)</li>
+<li>F64: 64-bit double-precision floating-point number (eight bytes, occupy four registers)</li>
+</ul>
+<p><b>Return:</b></p>
+<p>Input register values stored in a table, where the first value corresponds to the Input register value at the starting address.</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Read a 32-bit unsigned integer starting from address 2048.</span>
+data = GetInRegs(id, <span class="hljs-number">2048</span>, <span class="hljs-number">1</span>, &#x201C;U32&#x201D;)
+</code></pre>
+<p></p><h3 class="lua-cmd" id="getcoils">GetCoils</h3>
+<b>Command:</b><p></p>
+<pre><code class="lang-lua">GetCoils(id, addr, count)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Read the coil register value from the Modbus slave. The corresponding Modbus function code is 01.</p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>id: master ID</li>
+<li>addr: starting address of the coil register</li>
+<li>count: number of coil register values, range: 1~2000 (ModbusTCP protocol restriction. For actual range, please determine according to the number of slave registers or the protocol)</li>
+</ul>
+<p><b>Return:</b></p>
+<p>Coil register value stored in a table, where the first value corresponds to the coil register value at the starting address.</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Read 5 values in succession starting from address 0.</span>
+Coils = GetCoils(id,<span class="hljs-number">0</span>,<span class="hljs-number">5</span>)
+</code></pre>
+<p></p><h3 class="lua-cmd" id="setcoils">SetCoils</h3>
+<b>Command:</b><p></p>
+<pre><code class="lang-lua">SetCoils(id, addr, count, <span class="hljs-built_in">table</span>)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Write the specified value to the specified address of coil register. The corresponding Modbus function code is 05 (write single) and 0F (write multiple).</p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>id: master ID</li>
+<li>addr: starting address of the coil register</li>
+<li>count: number of values to be written to the coil register, range: 1~1968 (ModbusTCP protocol restriction. For actual range, please determine according to the number of slave registers or the protocol)</li>
+<li>table: store the values to be written to the coil register. The first value of the table corresponds to the starting address of coil register</li>
+</ul>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-keyword">local</span> Coils = {<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>}
+SetCoils(id, <span class="hljs-number">1024</span>, #coils, Coils)
+</code></pre>
+<p>Starting from address 1024, write 5 values in succession to the coil register.</p>
+<p></p><h3 class="lua-cmd" id="getholdregs">GetHoldRegs</h3>
+<b>Command:</b><p></p>
+<pre><code class="lang-lua">GetHoldRegs(id, addr, count, <span class="hljs-built_in">type</span>)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Read the holding register value with the specified data type from the Modbus slave. The corresponding Modbus function code is 03.</p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>id: master ID</li>
+<li>addr: starting address of the holding register</li>
+<li>count: number of holding register values, range: 1~125 (ModbusTCP protocol restriction. For actual range, please determine according to the number of slave registers or the protocol)</li>
+</ul>
+<p><b>Optional parameter:</b></p>
+<p>type: data type</p>
+<ul>
+<li>Empty: U16 by default</li>
+<li>U16: 16-bit unsigned integer (two bytes, occupy one register)</li>
+<li>U32: 32-bit unsigned integer (four bytes, occupy two registers)</li>
+<li>F32: 32-bit single-precision floating-point number (four bytes, occupy two registers)</li>
+<li>F64: 64-bit double-precision floating-point number (eight bytes, occupy four registers)</li>
+</ul>
+<p><b>Return:</b></p>
+<p>Holding register value stored in a table, where the first value corresponds to the holding register value at the starting address</p>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua">data = GetHoldRegs(id, <span class="hljs-number">2048</span>, <span class="hljs-number">1</span>, &#x201C;U32&#x201D;)
+</code></pre>
+<p>Read a 32-bit unsigned integer starting from address 2048. </p>
+<p></p><h3 class="lua-cmd" id="setholdregs">SetHoldRegs</h3>
+<b>Command:</b><p></p>
+<pre><code class="lang-lua">SetHoldRegs(id, addr, count, <span class="hljs-built_in">table</span>, <span class="hljs-built_in">type</span>)
+</code></pre>
+<p><b>Description:</b></p>
+<p>Write the specified value according to the specified data type to the specified address of holding register. The corresponding Modbus function code is 06 (write single) and 10 (write multiple).</p>
+<p><b>Required parameter:</b></p>
+<ul>
+<li>id: master ID</li>
+<li>addr: starting address of the holding register</li>
+<li>count: number of values to be written to the holding register, range: 1~123 (ModbusTCP protocol restriction. For actual range, please determine according to the number of slave registers or the protocol)</li>
+<li>table: store the values to be written to the coil register. The first value of the table corresponds to the starting address of holding register</li>
+</ul>
+<p><b>Optional parameter:</b></p>
+<p>type: data type</p>
+<ul>
+<li>Empty: U16 by default</li>
+<li>U16: 16-bit unsigned integer (two bytes, occupy one register)</li>
+<li>U32: 32-bit unsigned integer (four bytes, occupy two registers)</li>
+<li>F32: 32-bit single-precision floating-point number (four bytes, occupy two registers)</li>
+<li>F64: 64-bit double-precision floating-point number (eight bytes, occupy four registers)</li>
+</ul>
+<p><b>Example:</b></p>
+<pre><code class="lang-lua"><span class="hljs-comment">-- Write a 64-bit double-precision floating-point number to the holding register starting from address 2048.</span>
+<span class="hljs-keyword">local</span> data = {<span class="hljs-number">95.32105</span>}
+SetHoldRegs(id, <span class="hljs-number">2048</span>, #data, data, &#x201C;F64&#x201D;)
+</code></pre>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+<!--             
+                
+                <a href="TCP&UDP.html#udpwrite" class="navigation navigation-prev " aria-label="Previous page: UDPWrite">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Modbus.html#list" class="navigation navigation-next " aria-label="Next page: Command list">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+             -->
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"9 Modbus","level":"1.10","depth":1,"next":{"title":"Command list","level":"1.10.1","depth":2,"anchor":"#list","path":"script/Modbus.md","ref":"script/Modbus.md#list","articles":[]},"previous":{"title":"UDPWrite","level":"1.9.9","depth":2,"anchor":"#udpwrite","path":"script/TCP&UDP.md","ref":"script/TCP&UDP.md#udpwrite","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","-lunr","-search","search-pro","splitter","-page-treeview","-disqus","-sharing","-mermaid","-prism","highlight","flexible-alerts","code","-pageview-count","-auto-scroll-table","back-to-top-button","popup","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"popup":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Times New Roman","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Homepage":"https://www.dobot.cn/"}},"gitbook":"*"},"file":{"path":"script/Modbus.md","mtime":"2023-07-26T04:18:52.764Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-28T07:51:29.019Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

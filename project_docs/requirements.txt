@@ -1,0 +1,11 @@
+# Dependencias Python unificadas del proyecto
+# Entorno recomendado: Python 3.12+
+
+# Reconocimiento de voz offline en espanol (03_ml y 04_voice_cmd)
+vosk>=0.3.45
+
+# Captura de audio desde microfono
+sounddevice>=0.4.7
+
+# Empaquetado de ejecutables .exe (build de GUI)
+pyinstaller>=6.0

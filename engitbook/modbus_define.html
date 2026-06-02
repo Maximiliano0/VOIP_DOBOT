@@ -1,0 +1,3210 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Appendix A Modbus Register Definition · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="modbus_define.html" />
+    
+    
+    <link rel="prev" href="script/Safety Skin.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.dobot.cn/" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="script/lua.html">
+            
+                <a href="script/lua.html">
+            
+                    
+                    1 Lua basic grammar
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="script/Base.html">
+            
+                <a href="script/Base.html">
+            
+                    
+                    Variable and data type
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="script/lua_operator.html">
+            
+                <a href="script/lua_operator.html">
+            
+                    
+                    Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="script/lua_control.html">
+            
+                <a href="script/lua_control.html">
+            
+                    
+                    Process control
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="script/common.html">
+            
+                <a href="script/common.html">
+            
+                    
+                    2 General description
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="script/common.html">
+            
+                <a href="script/common.html#motion_type">
+            
+                    
+                    Motion mode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="script/common.html">
+            
+                <a href="script/common.html#point">
+            
+                    
+                    Point parameter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="script/common.html">
+            
+                <a href="script/common.html#coord">
+            
+                    
+                    Coordinate system parameter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="script/common.html">
+            
+                <a href="script/common.html#speed">
+            
+                    
+                    Speed parameter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="script/common.html">
+            
+                <a href="script/common.html#cp_r">
+            
+                    
+                    CP parameter
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="script/common.html">
+            
+                <a href="script/common.html#io">
+            
+                    
+                    IO signal
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="script/Motion.html">
+            
+                <a href="script/Motion.html">
+            
+                    
+                    3 Motion command
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="script/Motion.html">
+            
+                <a href="script/Motion.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="script/Motion.html">
+            
+                <a href="script/Motion.html#movj">
+            
+                    
+                    MovJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="script/Motion.html">
+            
+                <a href="script/Motion.html#movl">
+            
+                    
+                    MovL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="script/Motion.html">
+            
+                <a href="script/Motion.html#arc">
+            
+                    
+                    Arc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="script/Motion.html">
+            
+                <a href="script/Motion.html#circle">
+            
+                    
+                    Circle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="script/Motion.html">
+            
+                <a href="script/Motion.html#movjio">
+            
+                    
+                    MovJIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="script/Motion.html">
+            
+                <a href="script/Motion.html#movlio">
+            
+                    
+                    MovLIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="script/Motion.html">
+            
+                <a href="script/Motion.html#startpath">
+            
+                    
+                    StartPath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="script/Motion.html">
+            
+                <a href="script/Motion.html#getpathstartpose">
+            
+                    
+                    GetPathStartPose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="script/Motion.html">
+            
+                <a href="script/Motion.html#positivekin">
+            
+                    
+                    PositiveKin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="script/Motion.html">
+            
+                <a href="script/Motion.html#inversekin">
+            
+                    
+                    InverseKin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="script/Motion Relative.html">
+            
+                <a href="script/Motion Relative.html">
+            
+                    
+                    4 Relative motion command
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="script/Motion Relative.html">
+            
+                <a href="script/Motion Relative.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="script/Motion Relative.html">
+            
+                <a href="script/Motion Relative.html#relpointuser">
+            
+                    
+                    RelPointUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="script/Motion Relative.html">
+            
+                <a href="script/Motion Relative.html#relpointtool">
+            
+                    
+                    RelPointTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="script/Motion Relative.html">
+            
+                <a href="script/Motion Relative.html#relmovjtool">
+            
+                    
+                    RelMovJTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="script/Motion Relative.html">
+            
+                <a href="script/Motion Relative.html#relmovltool">
+            
+                    
+                    RelMovLTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="script/Motion Relative.html">
+            
+                <a href="script/Motion Relative.html#relmovjuser">
+            
+                    
+                    RelMovJUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="script/Motion Relative.html">
+            
+                <a href="script/Motion Relative.html#relmovluser">
+            
+                    
+                    RelMovLUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="script/Motion Relative.html">
+            
+                <a href="script/Motion Relative.html#reljointmovj">
+            
+                    
+                    RelJointMovJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="script/Motion Relative.html">
+            
+                <a href="script/Motion Relative.html#reljoint">
+            
+                    
+                    RelJoint
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html">
+            
+                    
+                    5 Motion parameter
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#cp">
+            
+                    
+                    CP
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#velj">
+            
+                    
+                    VelJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#accj">
+            
+                    
+                    AccJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#vell">
+            
+                    
+                    VelL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#accl">
+            
+                    
+                    AccL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#speedfactor">
+            
+                    
+                    SpeedFactor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#setpayload">
+            
+                    
+                    SetPayload
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#user">
+            
+                    
+                    User
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#setuser">
+            
+                    
+                    SetUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#calcuser">
+            
+                    
+                    CalcUser
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.12" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#tool">
+            
+                    
+                    Tool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.13" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#settool">
+            
+                    
+                    SetTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.14" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#calctool">
+            
+                    
+                    CalcTool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.15" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#getpose">
+            
+                    
+                    GetPose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.16" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#getangle">
+            
+                    
+                    GetAngle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.17" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#getabz">
+            
+                    
+                    GetABZ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.18" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#checkmovj">
+            
+                    
+                    CheckMovJ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.19" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#checkmovl">
+            
+                    
+                    CheckMovL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.20" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#setsafewallenable">
+            
+                    
+                    SetSafeWallEnable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.21" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#setworkzoneenable">
+            
+                    
+                    SetWorkZoneEnable
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.22" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#setcollisionlevel">
+            
+                    
+                    SetCollisionLevel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.23" data-path="script/Motion Params.html">
+            
+                <a href="script/Motion Params.html#setbackdistance">
+            
+                    
+                    SetBackDistance
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="script/IO.html">
+            
+                <a href="script/IO.html">
+            
+                    
+                    6 IO
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="script/IO.html">
+            
+                <a href="script/IO.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="script/IO.html">
+            
+                <a href="script/IO.html#di">
+            
+                    
+                    DI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="script/IO.html">
+            
+                <a href="script/IO.html#digroup">
+            
+                    
+                    DIGroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="script/IO.html">
+            
+                <a href="script/IO.html#do">
+            
+                    
+                    DO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="script/IO.html">
+            
+                <a href="script/IO.html#dogroup">
+            
+                    
+                    DOGroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="script/IO.html">
+            
+                <a href="script/IO.html#getdo">
+            
+                    
+                    GetDO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="script/IO.html">
+            
+                <a href="script/IO.html#getdogroup">
+            
+                    
+                    GetDOGroup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.8" data-path="script/IO.html">
+            
+                <a href="script/IO.html#ai">
+            
+                    
+                    AI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.9" data-path="script/IO.html">
+            
+                <a href="script/IO.html#ao">
+            
+                    
+                    AO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.10" data-path="script/IO.html">
+            
+                <a href="script/IO.html#getao">
+            
+                    
+                    GetAO
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="script/Tool.html">
+            
+                <a href="script/Tool.html">
+            
+                    
+                    7 Tool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="script/Tool.html">
+            
+                <a href="script/Tool.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="script/Tool.html">
+            
+                <a href="script/Tool.html#common">
+            
+                    
+                    General description
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="script/Tool.html">
+            
+                <a href="script/Tool.html#tooldi">
+            
+                    
+                    ToolDI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="script/Tool.html">
+            
+                <a href="script/Tool.html#tooldo">
+            
+                    
+                    ToolDO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="script/Tool.html">
+            
+                <a href="script/Tool.html#gettooldo">
+            
+                    
+                    GetToolDO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.6" data-path="script/Tool.html">
+            
+                <a href="script/Tool.html#toolai">
+            
+                    
+                    ToolAI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.7" data-path="script/Tool.html">
+            
+                <a href="script/Tool.html#settoolmode">
+            
+                    
+                    SetToolMode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.8" data-path="script/Tool.html">
+            
+                <a href="script/Tool.html#settoolpower">
+            
+                    
+                    SetToolPower
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.9" data-path="script/Tool.html">
+            
+                <a href="script/Tool.html#settool485">
+            
+                    
+                    SetTool485
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="script/TCP&UDP.html">
+            
+                <a href="script/TCP&UDP.html">
+            
+                    
+                    8 TCP&UDP
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="script/TCP&UDP.html">
+            
+                <a href="script/TCP&UDP.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="script/TCP&UDP.html">
+            
+                <a href="script/TCP&UDP.html#tcpcreate">
+            
+                    
+                    TCPCreate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="script/TCP&UDP.html">
+            
+                <a href="script/TCP&UDP.html#tcpstart">
+            
+                    
+                    TCPStart
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="script/TCP&UDP.html">
+            
+                <a href="script/TCP&UDP.html#tcpread">
+            
+                    
+                    TCPRead
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="script/TCP&UDP.html">
+            
+                <a href="script/TCP&UDP.html#tcpwrite">
+            
+                    
+                    TCPWrite
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="script/TCP&UDP.html">
+            
+                <a href="script/TCP&UDP.html#tcpdestroy">
+            
+                    
+                    TCPDestroy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="script/TCP&UDP.html">
+            
+                <a href="script/TCP&UDP.html#udpcreate">
+            
+                    
+                    UDPCreate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="script/TCP&UDP.html">
+            
+                <a href="script/TCP&UDP.html#udpread">
+            
+                    
+                    UDPRead
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="script/TCP&UDP.html">
+            
+                <a href="script/TCP&UDP.html#udpwrite">
+            
+                    
+                    UDPWrite
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="script/Modbus.html">
+            
+                <a href="script/Modbus.html">
+            
+                    
+                    9 Modbus
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="script/Modbus.html">
+            
+                <a href="script/Modbus.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="script/Modbus.html">
+            
+                <a href="script/Modbus.html#modbuscreate">
+            
+                    
+                    ModbusCreate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="script/Modbus.html">
+            
+                <a href="script/Modbus.html#modbusrtucreate">
+            
+                    
+                    ModbusRTUCreate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="script/Modbus.html">
+            
+                <a href="script/Modbus.html#modbusclose">
+            
+                    
+                    ModbusClose
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="script/Modbus.html">
+            
+                <a href="script/Modbus.html#getinbits">
+            
+                    
+                    GetInBits
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="script/Modbus.html">
+            
+                <a href="script/Modbus.html#getinregs">
+            
+                    
+                    GetInRegs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="script/Modbus.html">
+            
+                <a href="script/Modbus.html#getcoils">
+            
+                    
+                    GetCoils
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="script/Modbus.html">
+            
+                <a href="script/Modbus.html#setcoils">
+            
+                    
+                    SetCoils
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="script/Modbus.html">
+            
+                <a href="script/Modbus.html#getholdregs">
+            
+                    
+                    GetHoldRegs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="script/Modbus.html">
+            
+                <a href="script/Modbus.html#setholdregs">
+            
+                    
+                    SetHoldRegs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="script/Bus.html">
+            
+                <a href="script/Bus.html">
+            
+                    
+                    10 Bus register
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="script/Bus.html">
+            
+                <a href="script/Bus.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="script/Bus.html">
+            
+                <a href="script/Bus.html#getinputbool">
+            
+                    
+                    GetInputBool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="script/Bus.html">
+            
+                <a href="script/Bus.html#getinputint">
+            
+                    
+                    GetInputInt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="script/Bus.html">
+            
+                <a href="script/Bus.html#getinputfloat">
+            
+                    
+                    GetInputFloat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="script/Bus.html">
+            
+                <a href="script/Bus.html#getoutputbool">
+            
+                    
+                    GetOutputBool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="script/Bus.html">
+            
+                <a href="script/Bus.html#getoutputint">
+            
+                    
+                    GetOutputInt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="script/Bus.html">
+            
+                <a href="script/Bus.html#getoutputfloat">
+            
+                    
+                    GetOutputFloat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="script/Bus.html">
+            
+                <a href="script/Bus.html#setoutputbool">
+            
+                    
+                    SetOutputBool
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="script/Bus.html">
+            
+                <a href="script/Bus.html#setoutputint">
+            
+                    
+                    SetOutputInt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="script/Bus.html">
+            
+                <a href="script/Bus.html#setoutputfloat">
+            
+                    
+                    SetOutputFloat
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="script/Program Manage.html">
+            
+                <a href="script/Program Manage.html">
+            
+                    
+                    11 Program control
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="script/Program Manage.html">
+            
+                <a href="script/Program Manage.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="script/Program Manage.html">
+            
+                <a href="script/Program Manage.html#print">
+            
+                    
+                    Print
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="script/Program Manage.html">
+            
+                <a href="script/Program Manage.html#log">
+            
+                    
+                    Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="script/Program Manage.html">
+            
+                <a href="script/Program Manage.html#wait">
+            
+                    
+                    Wait
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="script/Program Manage.html">
+            
+                <a href="script/Program Manage.html#pause">
+            
+                    
+                    Pause
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="script/Program Manage.html">
+            
+                <a href="script/Program Manage.html#resetelapsedtime">
+            
+                    
+                    ResetElapsedTime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.7" data-path="script/Program Manage.html">
+            
+                <a href="script/Program Manage.html#elapsedtime">
+            
+                    
+                    ElapsedTime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.8" data-path="script/Program Manage.html">
+            
+                <a href="script/Program Manage.html#systime">
+            
+                    
+                    Systime
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="script/Safety Skin.html">
+            
+                <a href="script/Safety Skin.html">
+            
+                    
+                    12 SafeSkin
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.13.1" data-path="script/Safety Skin.html">
+            
+                <a href="script/Safety Skin.html#list">
+            
+                    
+                    Command list
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.2" data-path="script/Safety Skin.html">
+            
+                <a href="script/Safety Skin.html#enablesafeskin">
+            
+                    
+                    EnableSafeSkin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13.3" data-path="script/Safety Skin.html">
+            
+                <a href="script/Safety Skin.html#setsafeskin">
+            
+                    
+                    SetSafeSkin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.14" data-path="modbus_define.html">
+            
+                <a href="modbus_define.html">
+            
+                    
+                    Appendix A Modbus Register Definition
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.14.1" data-path="modbus_define.html">
+            
+                <a href="modbus_define.html#desc">
+            
+                    
+                    A.1 Modbus introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.2" data-path="modbus_define.html">
+            
+                <a href="modbus_define.html#coil">
+            
+                    
+                    A.2 Coil register (map1, control robot)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.3" data-path="modbus_define.html">
+            
+                <a href="modbus_define.html#contact">
+            
+                    
+                    A.3 Discrete input (map1, robot status)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.4" data-path="modbus_define.html">
+            
+                <a href="modbus_define.html#input">
+            
+                    
+                    A.4 Input register (map1, robot real-time feedback data)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14.5" data-path="modbus_define.html">
+            
+                <a href="modbus_define.html#hold">
+            
+                    
+                    A.5 Holding register (map1, interaction between robot and PLC)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<!-- <div class="book-header" role="navigation">
+    
+    
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Appendix A Modbus Register Definition</a>
+    </h1>
+</div> -->
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="appendix-a--modbus-register-definition">Appendix A  Modbus Register Definition</h1>
+<h2 id="desc" class="m2">1 Modbus introduction</h2>
+
+<p>Modbus protocol is a serial communication protocol. The robot system can communicate with external equipment through this protocol. When the robot is controlled through external equipment (such as PLC), the external equipment serves as the Modbus master, and the robot serves as the slave. </p>
+<p>Dobot six-axis collaborative robots support the following Modbus addresses, according to the Modbus protocol. </p>
+<ul>
+<li><p>00001-09999: Coil register, used to control the robot. value: 0 or 1, read/write.</p>
+</li>
+<li><p>10001-19999: Contact register, used to get the robot status. value: 0 or 1, read only.</p>
+</li>
+<li><p>30001-39999: Input register, used to obtain real-time feedback from the robot. value: up to 64 bit double precision floating point number, read only.</p>
+</li>
+<li><p>40001-49999: Holding register, used for robot PLC interaction. value: up to 64 bit double precision floating point number, read/write.</p>
+</li>
+</ul>
+<p>The Modbus function codes corresponding to various registers follow the standard Modbus protocol. </p>
+<table width="100%">
+  <colgroup>
+    <col style="width: 25%">
+    <col style="width: 25%">
+    <col style="width: 25%">
+    <col style="width: 25%">
+  </colgroup>
+  <tr>
+    <th>Register type</th>
+    <th>Read register</th>
+    <th>Write single register</th>
+    <th>Write multiple registers</th>
+  </tr>
+  <tr>
+    <td>Coil register</td>
+    <td>01</td>
+    <td>05</td>
+    <td>0F</td>
+  </tr>
+  <tr>
+    <td>Contact register</td>
+    <td>01</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Input register</td>
+    <td>04</td>
+    <td>-</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td>Holding register</td>
+    <td>04</td>
+    <td>06</td>
+    <td>10</td>
+  </tr>
+</table> 
+
+
+
+
+<p>The robot system provides two tables for the access from external equipment. map1 is accessible via port 502 (Modbus-TCP) and port 503 (RTU-over-TCP), and map2 is accessible via port 1502 (Modbus-TCP) and port 1503 (RTU-over-TCP).</p>
+<p>Some of the addresses of map1 are used by  the robot system by default, as detailed in the register definition below. map2 is currently empty and can be used based on your actual requirement.</p>
+<h2 id="coil" class="m2">2 Coil register (map1, control robot)</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">PLC address</th>
+<th style="text-align:center">Script address (Get/SetCoils)</th>
+<th style="text-align:center">Register type</th>
+<th style="text-align:center">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">00001</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Start</td>
+</tr>
+<tr>
+<td style="text-align:center">00002</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Stop</td>
+</tr>
+<tr>
+<td style="text-align:center">00003</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Pause</td>
+</tr>
+<tr>
+<td style="text-align:center">00004</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Enable</td>
+</tr>
+<tr>
+<td style="text-align:center">00005</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Disable</td>
+</tr>
+<tr>
+<td style="text-align:center">00006</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Clear alarm</td>
+</tr>
+<tr>
+<td style="text-align:center">00007</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Enter drag</td>
+</tr>
+<tr>
+<td style="text-align:center">00008</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Exit drag</td>
+</tr>
+<tr>
+<td style="text-align:center">00009~01025</td>
+<td style="text-align:center">8~1024</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Reserved</td>
+</tr>
+<tr>
+<td style="text-align:center">01025~09999</td>
+<td style="text-align:center">1024~9998</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">User-defined</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contact" class="m2">3 Discrete input (map1, robot status)</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">PLC address</th>
+<th style="text-align:center">Script address (GetInBits)</th>
+<th style="text-align:center">Register type</th>
+<th style="text-align:center">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10001</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Running status</td>
+</tr>
+<tr>
+<td style="text-align:center">10002</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Stop status</td>
+</tr>
+<tr>
+<td style="text-align:center">10003</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Pause status</td>
+</tr>
+<tr>
+<td style="text-align:center">10004</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Safety posture status</td>
+</tr>
+<tr>
+<td style="text-align:center">10005</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">SafeSkin pause status</td>
+</tr>
+<tr>
+<td style="text-align:center">10006</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Idle status</td>
+</tr>
+<tr>
+<td style="text-align:center">10007</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Power status</td>
+</tr>
+<tr>
+<td style="text-align:center">10008</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Enabling status</td>
+</tr>
+<tr>
+<td style="text-align:center">10009</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Alarm status</td>
+</tr>
+<tr>
+<td style="text-align:center">10010</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Collision status</td>
+</tr>
+<tr>
+<td style="text-align:center">10011</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Exit drag status</td>
+</tr>
+<tr>
+<td style="text-align:center">10012~19999</td>
+<td style="text-align:center">11~9998</td>
+<td style="text-align:center">Bit</td>
+<td style="text-align:center">Undefined</td>
+</tr>
+</tbody>
+</table>
+<h2 id="input" class="m2">4 Input register (map1, robot real-time feedback data)</h2>
+
+<p>PLC addresses 30001~30999, and registers 31722 ~39999 are functionally undefined. The byte order is little endian. </p>
+<table style="font-size:12px">
+<thead>
+<tr>
+<th align="center">PLC address</th>
+<th align="center">Data address</th>
+<th align="center">Number of values</th>
+<th align="center">Byte</th>
+<th align="center">Script address (GetInRegs)</th>
+<th align="center">Register type</th>
+<th align="center">Function</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">31000</td>
+<td align="center">unsigned short</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">999</td>
+<td align="center">U16</td>
+<td align="center">data validity</td>
+</tr>
+<tr>
+<td align="center">31001</td>
+<td align="center">unsigned short</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">1000</td>
+<td align="center">U16</td>
+<td align="center">Total byte length of message</td>
+</tr>
+<tr>
+<td align="center">31002~31004</td>
+<td align="center">unsigned short</td>
+<td align="center">3</td>
+<td align="center">6</td>
+<td align="center">1001~1003</td>
+<td align="center">U16</td>
+<td align="center">Reserved</td>
+</tr>
+<tr>
+<td align="center">31005~31008</td>
+<td align="center">uint64</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1004~1007</td>
+<td align="center">U64</td>
+<td align="center">Digital input, see <a href="#dido">DI/DO description</a></td>
+</tr>
+<tr>
+<td align="center">31009~31012</td>
+<td align="center">uint64</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1008~1011</td>
+<td align="center">U64</td>
+<td align="center">Digital output, see <a href="#dido">DI/DO description</a></td>
+</tr>
+<tr>
+<td align="center">31013~31016</td>
+<td align="center">uint64</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1012~1015</td>
+<td align="center">U64</td>
+<td align="center">Robot mode, see <a href="#robotmode">RobotMode description</a></td>
+</tr>
+<tr>
+<td align="center">31017~31020</td>
+<td align="center">uint64</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1016~1019</td>
+<td align="center">U64</td>
+<td align="center">Timestamp</td>
+</tr>
+<tr>
+<td align="center">31021~31024</td>
+<td align="center">uint64</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1020~1023</td>
+<td align="center">U64</td>
+<td align="center">Reserved</td>
+</tr>
+<tr>
+<td align="center">31025~31028</td>
+<td align="center">uint64</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1024~1027</td>
+<td align="center">U64</td>
+<td align="center">Memory structure test standard value <br>0x0123 4567 89AB CDEF</td>
+</tr>
+<tr>
+<td align="center">31029~31032</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1028~1031</td>
+<td align="center">F64</td>
+<td align="center">Reserved</td>
+</tr>
+<tr>
+<td align="center">31033~31036</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1032~1035</td>
+<td align="center">F64</td>
+<td align="center">Speed rate</td>
+</tr>
+<tr>
+<td align="center">31037~31040</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1036~1039</td>
+<td align="center">F64</td>
+<td align="center">Current momentum of robot</td>
+</tr>
+<tr>
+<td align="center">31041~31044</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1040~1043</td>
+<td align="center">F64</td>
+<td align="center">Control board voltage</td>
+</tr>
+<tr>
+<td align="center">31045~31048</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1044~1047</td>
+<td align="center">F64</td>
+<td align="center">Robot voltage</td>
+</tr>
+<tr>
+<td align="center">31049~31052</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1048~1051</td>
+<td align="center">F64</td>
+<td align="center">Robot current</td>
+</tr>
+<tr>
+<td align="center">31053~31056</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1052~1055</td>
+<td align="center">F64</td>
+<td align="center">Reserved</td>
+</tr>
+<tr>
+<td align="center">31057~31060</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1056~1059</td>
+<td align="center">F64</td>
+<td align="center">Reserved</td>
+</tr>
+<tr>
+<td align="center">31061~31072</td>
+<td align="center">double</td>
+<td align="center">3</td>
+<td align="center">24</td>
+<td align="center">1060~1071</td>
+<td align="center">F64</td>
+<td align="center">TCP acceleration</td>
+</tr>
+<tr>
+<td align="center">31073~31084</td>
+<td align="center">double</td>
+<td align="center">3</td>
+<td align="center">24</td>
+<td align="center">1072~1083</td>
+<td align="center">F64</td>
+<td align="center">Elbow position</td>
+</tr>
+<tr>
+<td align="center">31085~31096</td>
+<td align="center">double</td>
+<td align="center">3</td>
+<td align="center">24</td>
+<td align="center">1084~1095</td>
+<td align="center">F64</td>
+<td align="center">Elbow speed</td>
+</tr>
+<tr>
+<td align="center">31097~31120</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1096~1119</td>
+<td align="center">F64</td>
+<td align="center">Target joint position</td>
+</tr>
+<tr>
+<td align="center">31121~31144</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1120~1143</td>
+<td align="center">F64</td>
+<td align="center">Target joint speed</td>
+</tr>
+<tr>
+<td align="center">31145~31168</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1144~1167</td>
+<td align="center">F64</td>
+<td align="center">Target joint acceleration</td>
+</tr>
+<tr>
+<td align="center">31169~31192</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1168~1191</td>
+<td align="center">F64</td>
+<td align="center">Target joint current</td>
+</tr>
+<tr>
+<td align="center">31193~31216</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1192~1215</td>
+<td align="center">F64</td>
+<td align="center">Target joint torque</td>
+</tr>
+<tr>
+<td align="center">31217~31240</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1216~1239</td>
+<td align="center">F64</td>
+<td align="center">Actual joint position</td>
+</tr>
+<tr>
+<td align="center">31241~31264</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1240~1263</td>
+<td align="center">F64</td>
+<td align="center">Actual joint speed</td>
+</tr>
+<tr>
+<td align="center">31265~31288</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1264~1287</td>
+<td align="center">F64</td>
+<td align="center">Actual joint current</td>
+</tr>
+<tr>
+<td align="center">31289~31312</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1288~1311</td>
+<td align="center">F64</td>
+<td align="center">TCP sensor force<br>(calculate through six dimentional force)</td>
+</tr>
+<tr>
+<td align="center">31313~31336</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1312~1335</td>
+<td align="center">F64</td>
+<td align="center">TCP actual Cartesian coordinates</td>
+</tr>
+<tr>
+<td align="center">31337~31360</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1336~1359</td>
+<td align="center">F64</td>
+<td align="center">TCP actual speed in Cartesian coordinate system</td>
+</tr>
+<tr>
+<td align="center">31361~31384</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1360~1383</td>
+<td align="center">F64</td>
+<td align="center">TCP force<br>(calculate through joint current)</td>
+</tr>
+<tr>
+<td align="center">31384~31408</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1384~1407</td>
+<td align="center">F64</td>
+<td align="center">TCP target Cartesian coordinates</td>
+</tr>
+<tr>
+<td align="center">31409~31432</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1408~1431</td>
+<td align="center">F64</td>
+<td align="center">TCP target Cartesian speed</td>
+</tr>
+<tr>
+<td align="center">31433~31456</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1432~1455</td>
+<td align="center">F64</td>
+<td align="center">Joint temperature</td>
+</tr>
+<tr>
+<td align="center">31456~31480</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1456~1479</td>
+<td align="center">F64</td>
+<td align="center">Joint control mode</td>
+</tr>
+<tr>
+<td align="center">31481~31504</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1480~1503</td>
+<td align="center">F64</td>
+<td align="center">Joint voltage</td>
+</tr>
+<tr>
+<td align="center">31505~31506</td>
+<td align="center">char</td>
+<td align="center">4</td>
+<td align="center">4</td>
+<td align="center">1504~1505</td>
+<td align="center">U16</td>
+<td align="center">Hand coordinate system</td>
+</tr>
+<tr>
+<td align="center">31507</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1506 low byte</td>
+<td align="center">U8</td>
+<td align="center">User coordinates</td>
+</tr>
+<tr>
+<td align="center">31507</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1506 high byte</td>
+<td align="center">U8</td>
+<td align="center">Tool coordinates</td>
+</tr>
+<tr>
+<td align="center">31508</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1507 low byte</td>
+<td align="center">U8</td>
+<td align="center">Algorithm queue running signal</td>
+</tr>
+<tr>
+<td align="center">31508</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1507 high byte</td>
+<td align="center">U8</td>
+<td align="center">Algorithm queue pause signal</td>
+</tr>
+<tr>
+<td align="center">31509</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1508 low byte</td>
+<td align="center">U8</td>
+<td align="center">Joint speed rate</td>
+</tr>
+<tr>
+<td align="center">31509</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1508 high byte</td>
+<td align="center">U8</td>
+<td align="center">Joint acceleration rate</td>
+</tr>
+<tr>
+<td align="center">31510</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1509 low byte</td>
+<td align="center">U8</td>
+<td align="center">Joint jerk rate</td>
+</tr>
+<tr>
+<td align="center">31510</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1509 high byte</td>
+<td align="center">U8</td>
+<td align="center">Cartesian position speed rate</td>
+</tr>
+<tr>
+<td align="center">31511</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1510 low byte</td>
+<td align="center">U8</td>
+<td align="center">Cartesian posture speed rate</td>
+</tr>
+<tr>
+<td align="center">31511</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1510 high byte</td>
+<td align="center">U8</td>
+<td align="center">Cartesian position acceleration rate</td>
+</tr>
+<tr>
+<td align="center">31512</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1511 low byte</td>
+<td align="center">U8</td>
+<td align="center">Cartesian posture acceleration rate</td>
+</tr>
+<tr>
+<td align="center">31512</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1511 high byte</td>
+<td align="center">U8</td>
+<td align="center">Cartesian position jerk ratio</td>
+</tr>
+<tr>
+<td align="center">31513</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1512 low byte</td>
+<td align="center">U8</td>
+<td align="center">Cartesian posture jerk rate</td>
+</tr>
+<tr>
+<td align="center">31513</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1512 high byte</td>
+<td align="center">U8</td>
+<td align="center">Robot brake status, see <a href="#brake_status">BrakeStatus description</a></td>
+</tr>
+<tr>
+<td align="center">31514</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1513 low byte</td>
+<td align="center">U8</td>
+<td align="center">Robot enabling status</td>
+</tr>
+<tr>
+<td align="center">31514</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1513 high byte</td>
+<td align="center">U8</td>
+<td align="center">Robot drag status</td>
+</tr>
+<tr>
+<td align="center">31515</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1514 low byte</td>
+<td align="center">U8</td>
+<td align="center">Robot running status</td>
+</tr>
+<tr>
+<td align="center">31515</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1514 high byte</td>
+<td align="center">U8</td>
+<td align="center">Robot alarm status</td>
+</tr>
+<tr>
+<td align="center">31516</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1515 low byte</td>
+<td align="center">U8</td>
+<td align="center">Robot jog status</td>
+</tr>
+<tr>
+<td align="center">31516</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1515 high byte</td>
+<td align="center">U8</td>
+<td align="center">Robot type, see <a href="#robot_type">RobotType description</a></td>
+</tr>
+<tr>
+<td align="center">31517</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1516 low byte</td>
+<td align="center">U8</td>
+<td align="center">Button board drag signal</td>
+</tr>
+<tr>
+<td align="center">31517</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1516 high byte</td>
+<td align="center">U8</td>
+<td align="center">Button board enabling signal</td>
+</tr>
+<tr>
+<td align="center">31518</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1517 low byte</td>
+<td align="center">U8</td>
+<td align="center">Button board record signal</td>
+</tr>
+<tr>
+<td align="center">31518</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1517 high byte</td>
+<td align="center">U8</td>
+<td align="center">Button board playback signal</td>
+</tr>
+<tr>
+<td align="center">31519</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1518 low byte</td>
+<td align="center">U8</td>
+<td align="center">Button board gripper control signal</td>
+</tr>
+<tr>
+<td align="center">31519</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">1518 high byte</td>
+<td align="center">U8</td>
+<td align="center">Six dimensional force online status</td>
+</tr>
+<tr>
+<td align="center">31520~31560</td>
+<td align="center">char</td>
+<td align="center">1</td>
+<td align="center">82</td>
+<td align="center">1519~1559</td>
+<td align="center">U16</td>
+<td align="center">Reserved</td>
+</tr>
+<tr>
+<td align="center">31561~31584</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1560~1583</td>
+<td align="center">F64</td>
+<td align="center">Actual torque</td>
+</tr>
+<tr>
+<td align="center">31585~31588</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1584~1587</td>
+<td align="center">F64</td>
+<td align="center">Load (kg)</td>
+</tr>
+<tr>
+<td align="center">31589~31592</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1588~1591</td>
+<td align="center">F64</td>
+<td align="center">x-directional eccentric distance (mm)</td>
+</tr>
+<tr>
+<td align="center">31593~31596</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1592~1595</td>
+<td align="center">F64</td>
+<td align="center">y-directional eccentric distance (mm)</td>
+</tr>
+<tr>
+<td align="center">31597~31600</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1596~1599</td>
+<td align="center">F64</td>
+<td align="center">z-directional eccentric distance (mm)</td>
+</tr>
+<tr>
+<td align="center">31601~31624</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1600~1623</td>
+<td align="center">F64</td>
+<td align="center">User coordinates</td>
+</tr>
+<tr>
+<td align="center">31625~31648</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1624~1647</td>
+<td align="center">F64</td>
+<td align="center">Tool coordinates</td>
+</tr>
+<tr>
+<td align="center">31649~31652</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">8</td>
+<td align="center">1648~1651</td>
+<td align="center">F64</td>
+<td align="center">Trajectory playback running</td>
+</tr>
+<tr>
+<td align="center">31653~31676</td>
+<td align="center">double</td>
+<td align="center">6</td>
+<td align="center">48</td>
+<td align="center">1652~1675</td>
+<td align="center">F64</td>
+<td align="center">Original value of current six dimentional force</td>
+</tr>
+<tr>
+<td align="center">31677~31692</td>
+<td align="center">double</td>
+<td align="center">4</td>
+<td align="center">32</td>
+<td align="center">1676~1691</td>
+<td align="center">F64</td>
+<td align="center">[qw,qx,qy,qz] target quaternion</td>
+</tr>
+<tr>
+<td align="center">31693~31708</td>
+<td align="center">double</td>
+<td align="center">4</td>
+<td align="center">32</td>
+<td align="center">1692~1707</td>
+<td align="center">F64</td>
+<td align="center">[qw,qx,qy,qz] actual quaternion</td>
+</tr>
+<tr>
+<td align="center">31709</td>
+<td align="center">unsigned short</td>
+<td align="center">1</td>
+<td align="center">2</td>
+<td align="center">1708</td>
+<td align="center">U16</td>
+<td align="center">Manual/Automatic status<br>1: Manual<br> 2: Automatic <br>0: Mode switch is off</td>
+</tr>
+<tr>
+<td align="center">31710~31721</td>
+<td align="center">double</td>
+<td align="center">1</td>
+<td align="center">24</td>
+<td align="center">1708~1720</td>
+<td align="center">F64</td>
+<td align="center">Reserved</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">1440</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">Totally 1440 bytes</td>
+</tr>
+</tbody></table>
+
+
+<p id="dido"><b>DI/DO description</b></p>
+
+<p>DI/DO each occupies 8 bytes. Each byte has 8 bits (binary) and can represent the status of up to 64 ports each. Each byte from low to high indicates the status of one terminal. 1 indicates the corresponding terminal is ON, and 0 indicates the corresponding terminal is OFF or no corresponding terminal.
+<br>
+For example, the first byte of DI is 0x01, represented as 00000001 in binary, which from low to high indicates the status of D1_1~DI_8 respectively, that is, DI_1 is ON and the remaining 7 DIs are OFF.
+<br>
+The second byte is 0x02, represented as 00000010 in binary, which from low to high indicates the status of D1_9 ~ DI_16 respectively, that is, DI_10 is ON and the remaining 7 DIs are OFF. 
+<br>
+Different control cabinets vary in the number of IO terminals. The binary bits exceeding the number of IO terminals will be filled with 0.
+<br></p>
+<p id="robotmode"><b>RobotMode description</b></p>
+
+<table width="100%">
+  <colgroup>
+    <col style="width: 10%">
+    <col style="width: 30%">
+    <col style="width: 60%">
+  </colgroup>
+  <tr>
+    <th>No.</th>
+    <th>Definition</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>ROBOT_MODE_INIT</td>
+    <td>Initialised status</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>ROBOT_MODE_BRAKE_OPEN</td>
+    <td>Brake switched on</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>ROBOT_MODE_POWEROFF</td>
+    <td>Power-off status</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>ROBOT_MODE_DISABLED</td>
+    <td>Disabled (no brake switched on)</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>ROBOT_MODE_ENABLE</td>
+    <td>Enabled and idle</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>ROBOT_MODE_BACKDRIVE</td>
+    <td>Drag mode</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>ROBOT_MODE_RUNNING</td>
+    <td>Running status (project, TCP queue motion)</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>ROBOT_MODE_SINGLE_MOVE</td>
+    <td>Single motion status (jog, Runto, etc.)</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>ROBOT_MODE_ERROR</td>
+    <td>There are uncleared alarms. This status has the highest priority. It returns 9 when there is an alarm, regardless of the status of the robot arm</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>ROBOT_MODE_PAUSE</td>
+    <td>Project pause status</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>ROBOT_MODE_COLLISION</td>
+    <td>Collision detection trigger status</td>
+  </tr>
+</table>
+
+
+
+
+<p id="brake_status"><b>BrakeStatus description</b></p>
+
+<p>This byte indicates the brake status of the each joints by bit. 1 means that the corresponding joint brake is switched on. The bits correspond to the joints in the following table:</p>
+<table width="100%">
+  <colgroup>
+    <col style="width: 20%">
+    <col style="width: 10%">
+    <col style="width: 10%">
+    <col style="width: 10%">
+    <col style="width: 10%">
+    <col style="width: 10%">
+    <col style="width: 10%">
+    <col style="width: 10%">
+    <col style="width: 10%">
+  </colgroup>
+  <tr>
+    <th>Bit</th>
+    <th>7</th>
+    <th>6</th>
+    <th>5</th>
+    <th>4</th>
+    <th>3</th>
+    <th>2</th>
+    <th>1</th>
+    <th>0</th>
+  </tr>
+  <tr>
+    <th>Description</th>
+    <th>Reserved</th>
+    <th>Reserved</th>
+    <th>J1</th>
+    <th>J2</th>
+    <th>J3</th>
+    <th>J4</th>
+    <th>J5</th>
+    <th>J6</th>
+  </tr>
+</table>
+
+
+
+<p>Example: </p>
+<ul>
+<li>0x01 (00000001): J6 brake is switched on</li>
+<li>0x02 (00000010): J5 brake is switched on</li>
+<li>0x03 (00000011): J5 and J6 brakes are switched on</li>
+<li>0x03 (00000100): J4 brake is switched on</li>
+</ul>
+<p id="robot_type"><b>RobotType description</b></p>
+
+<table width="100%">
+  <colgroup>
+    <col style="width: 20%">
+    <col style="width: 80%">
+  </colgroup>
+  <tr>
+    <th>Value</th>
+    <th>Model</th>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>CR3</td>
+  </tr>
+  <tr>
+    <td>31</td>
+    <td>CR3L</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>CR5</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>CR7</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>CR10</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>CR12</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>CR16</td>
+  </tr>
+  <tr>
+    <td>101</td>
+    <td>Nova 2</td>
+  </tr>
+  <tr>
+    <td>103</td>
+    <td>Nova 5</td>
+  </tr>
+  <tr>
+    <td>113</td>
+    <td>CR3A</td>
+  </tr>
+  <tr>
+    <td>115</td>
+    <td>CR5A</td>
+  </tr>
+  <tr>
+    <td>117</td>
+    <td>CR7A</td>
+  </tr>
+  <tr>
+    <td>120</td>
+    <td>CR10A</td>
+  </tr>
+  <tr>
+    <td>122</td>
+    <td>CR12A</td>
+  </tr>
+  <tr>
+    <td>126</td>
+    <td>CR16A</td>
+  </tr>
+  <tr>
+    <td>130</td>
+    <td>CR20A</td>
+  </tr>
+</table>
+
+
+
+<h2 id="hold" class="m2">5 Holding register (map1, interaction between robot and PLC)</h2>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:center">PLC address</th>
+<th style="text-align:center">Script address (Get/SetHoldRegs)</th>
+<th style="text-align:center">Register type</th>
+<th style="text-align:center">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">40001~41024</td>
+<td style="text-align:center">0~1023</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">Reserved</td>
+</tr>
+<tr>
+<td style="text-align:center">41025~49999</td>
+<td style="text-align:center">1024~9998</td>
+<td style="text-align:center">-</td>
+<td style="text-align:center">User-defined</td>
+</tr>
+</tbody>
+</table>
+
+<script>console.log("plugin-popup....");document.onclick = function(e){ e.target.tagName === "IMG" && window.open(e.target.src,e.target.src)}</script><style>img{cursor:pointer}</style>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+<!--             
+                
+                <a href="script/Safety Skin.html#setsafeskin" class="navigation navigation-prev " aria-label="Previous page: SetSafeSkin">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="modbus_define.html#desc" class="navigation navigation-next " aria-label="Next page: A.1 Modbus introduction">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+             -->
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Appendix A Modbus Register Definition","level":"1.14","depth":1,"next":{"title":"A.1 Modbus introduction","level":"1.14.1","depth":2,"anchor":"#desc","path":"modbus_define.md","ref":"modbus_define.md#desc","articles":[]},"previous":{"title":"SetSafeSkin","level":"1.13.3","depth":2,"anchor":"#setsafeskin","path":"script/Safety Skin.md","ref":"script/Safety Skin.md#setsafeskin","articles":[]},"dir":"ltr"},"config":{"plugins":["chapter-fold","-lunr","-search","search-pro","splitter","-page-treeview","-disqus","-sharing","-mermaid","-prism","highlight","flexible-alerts","code","-pageview-count","-auto-scroll-table","back-to-top-button","popup","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"livereload":{},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"popup":{},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":14,"fontFamily":"Times New Roman","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"links":{"sharing":{"all":null,"facebook":null,"google":null,"twitter":null,"weibo":null},"sidebar":{"Homepage":"https://www.dobot.cn/"}},"gitbook":"*"},"file":{"path":"modbus_define.md","mtime":"2023-07-26T08:45:45.398Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-28T07:51:29.019Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
