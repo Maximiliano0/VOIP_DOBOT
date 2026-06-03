@@ -23,7 +23,7 @@ Implementa una arquitectura simple y reproducible para integrar:
 
 - Robot-side en Lua (DobotStudio Pro 4.4).
 - PC-side en Python (GUI, TCP, voz offline).
-- Comandos operativos: derecha, izquierda, arriba, abajo, home.
+- Comandos operativos: derecha, izquierda, arriba, abajo, home/origen, activar_ventosa, desactivar_ventosa.
 
 ## Estructura Del Proyecto
 

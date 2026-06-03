@@ -96,15 +96,10 @@ La capa de voz/TCP mapea comandos discretos a movimientos limitados:
 
 - `derecha` y `izquierda`: ajustes articulares de orientacion.
 - `arriba` y `abajo`: ajuste de inclinacion.
-- `home`: retorno a postura segura de referencia.
+- `home` y `origen`: retorno a postura segura de referencia.
+- `activar_ventosa` y `desactivar_ventosa`: accionamiento del efector final de succion (ES01).
 
 El diseno prioriza control interpretable y repetible sobre planificacion compleja.
-
-## Referencias cruzadas internas
-
-- Voz y modelo ASR: [teoria_modelo_deteccion_voz.md](teoria_modelo_deteccion_voz.md)
-- Arquitectura de comunicacion: [teoria_tcp_y_arquitectura.md](teoria_tcp_y_arquitectura.md)
-- Seguridad por capas: [teoria_seguridad_operacion.md](teoria_seguridad_operacion.md)
 
 ## Referencias (APA 7)
 

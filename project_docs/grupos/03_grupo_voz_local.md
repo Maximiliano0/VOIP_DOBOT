@@ -4,7 +4,7 @@ Este grupo implementa deteccion offline de palabras clave por microfono para pru
 
 ## Objetivo
 
-- Detectar palabras: `derecha`, `izquierda`, `home`, `arriba`, `abajo`.
+- Detectar palabras: `derecha`, `izquierda`, `home`, `origen`, `arriba`, `abajo`, `activar ventosa`, `desactivar ventosa`.
 - Probar calidad de reconocimiento en GUI local.
 
 ## Aplicaciones .py
@@ -12,6 +12,7 @@ Este grupo implementa deteccion offline de palabras clave por microfono para pru
 - `pc_scripts/03_ml/voice_word_gui.py`
   - GUI Tkinter para iniciar/detener escucha.
   - Usa Vosk + `sounddevice` en un hilo de trabajo.
+  - Incluye mapeo de alias: `origen -> home` y comandos de ventosa a comandos TCP canónicos.
   - Muestra texto parcial/final y conteo de detecciones.
 
 - `pc_scripts/03_ml/requirements.txt`

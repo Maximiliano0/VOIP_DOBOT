@@ -9,8 +9,11 @@ Palabras objetivo:
 - derecha
 - izquierda
 - home
+- origen
 - arriba
 - abajo
+- activar ventosa
+- desactivar ventosa
 
 Este enfoque reduce ambiguedad semantica y limita acciones posibles, lo cual es deseable para tareas de mando operativo.
 
@@ -83,7 +86,7 @@ Limitaciones:
 - Mantener sample rate de 16 kHz (coherente con el modelo small-es).
 - Usar microfono cercano y consistente.
 - Validar primero en modo local (03_ml) y luego habilitar envio al robot (04_voice_cmd).
-- Mantener comando `home` disponible como accion de recuperacion operativa.
+- Mantener comando `home`/`origen` disponible como accion de recuperacion operativa.
 
 ## Referencias (APA 7)
 
@@ -96,9 +99,3 @@ Povey, D., Ghoshal, A., Boulianne, G., Burget, L., Glembek, O., Goel, N., Hannem
 Rabiner, L. R. (1989). A tutorial on hidden Markov models and selected applications in speech recognition. Proceedings of the IEEE, 77(2), 257-286. https://doi.org/10.1109/5.18626
 
 Vosk API. (n.d.). Vosk speech recognition toolkit. https://alphacephei.com/vosk/
-
-## Referencias cruzadas internas
-
-- Cinematica y ejecucion de movimiento: [teoria_brazo_joints_movimientos.md](teoria_brazo_joints_movimientos.md)
-- Transporte de comandos: [teoria_tcp_y_arquitectura.md](teoria_tcp_y_arquitectura.md)
-- Riesgo operacional: [teoria_seguridad_operacion.md](teoria_seguridad_operacion.md)

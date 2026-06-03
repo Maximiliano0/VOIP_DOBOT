@@ -73,7 +73,7 @@ python -m pip install -r project_docs/requirements.txt
    - Voz local: `pc_scripts/03_ml/voice_word_gui.py`
    - Voz + TCP: `pc_scripts/04_voice_cmd/voice_cmd.py`
 3. Verificar conectividad con `ping`.
-4. Operar comandos (`derecha`, `izquierda`, `arriba`, `abajo`, `home`).
+4. Operar comandos (`derecha`, `izquierda`, `arriba`, `abajo`, `home`/`origen`, `activar_ventosa`, `desactivar_ventosa`).
 
 ## Ejecutables .exe
 

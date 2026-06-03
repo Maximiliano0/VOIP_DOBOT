@@ -32,6 +32,12 @@ Mantener una sesion TCP activa evita handshakes repetidos y reduce latencia perc
 - Unidad logica: 1 comando por linea, 1 respuesta por linea.
 - Comandos idempotentes o acotados para minimizar estados ambiguos.
 
+Ejemplos de comandos actuales:
+
+- Movimiento: `derecha`, `izquierda`, `arriba`, `abajo`, `home`.
+- Alias de operador: `origen` (normalizado a `home`).
+- Efector final: `activar_ventosa`, `desactivar_ventosa`.
+
 ## Resiliencia y manejo de errores
 
 Estrategias implementadas:
@@ -53,12 +59,6 @@ La arquitectura permite extender comando a comando sin romper compatibilidad:
 - Agregar nuevo comando en Lua (`exec_cmd`).
 - Exponerlo en GUI Python.
 - Mantener el mismo contrato de linea.
-
-## Referencias cruzadas internas
-
-- Modelo de reconocimiento de voz: [teoria_modelo_deteccion_voz.md](teoria_modelo_deteccion_voz.md)
-- Cinematica y movimiento del robot: [teoria_brazo_joints_movimientos.md](teoria_brazo_joints_movimientos.md)
-- Seguridad y mitigaciones: [teoria_seguridad_operacion.md](teoria_seguridad_operacion.md)
 
 ## Referencias (APA 7)
 

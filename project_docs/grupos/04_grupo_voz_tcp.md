@@ -6,6 +6,7 @@ Este grupo integra reconocimiento de voz y envio TCP al robot en una sola aplica
 
 - Escuchar palabras clave por microfono.
 - Enviar automaticamente el comando detectado al servidor Lua del robot.
+- Permitir alias de operador (`origen`) y accionar ventosa electrica ES01.
 
 ## Aplicaciones .py
 
@@ -15,6 +16,8 @@ Este grupo integra reconocimiento de voz y envio TCP al robot en una sola aplica
     - Configuracion Vosk (modelo, microfono, sample rate).
     - Envio automatico al detectar palabra objetivo.
     - Envio manual por botones.
+    - Alias de voz: `origen -> home`.
+    - Control de ventosa: `activar ventosa` / `desactivar ventosa` y botones `Ventosa ON/OFF`.
   - IP por defecto: `192.168.5.1`.
   - Soporta ruta de modelo para script y para `.exe` empaquetado (PyInstaller).
 
@@ -35,3 +38,4 @@ Este grupo integra reconocimiento de voz y envio TCP al robot en una sola aplica
 3. Verificar `ping`.
 4. Iniciar escucha.
 5. Al detectar palabra, se envia por TCP y se muestra respuesta.
+6. Para retorno a origen se acepta `origen` como alias de `home`.

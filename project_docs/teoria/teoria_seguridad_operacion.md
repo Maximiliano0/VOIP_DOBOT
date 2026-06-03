@@ -22,7 +22,7 @@ Capas relevantes en este proyecto:
 - Vocabulario cerrado de comandos (ya aplicado).
 - Confirmacion de estado en GUI (log y ultimo comando).
 - Umbrales operativos conservadores de velocidad durante comisionado.
-- Priorizar comando `home` como estrategia de recuperacion.
+- Priorizar comando `home`/`origen` como estrategia de recuperacion.
 - Posibilidad de desactivar envio automatico y operar solo en modo manual.
 
 ## Mitigaciones procedimentales
@@ -35,20 +35,15 @@ Capas relevantes en este proyecto:
 ## Checklist minimo de puesta en marcha
 
 - Espacio libre y sin obstrucciones.
-- Robot en postura conocida (`home`).
+- Robot en postura conocida (`home` o comando `origen`).
 - Conexion TCP verificada con `ping`.
 - Prueba de deteccion de voz en local antes de habilitar envio.
 - Operador con acceso inmediato a parada de emergencia.
+- Verificar accion segura del efector final (`activar_ventosa`/`desactivar_ventosa`) antes de operar con piezas.
 
 ## Nota de cumplimiento
 
 La aplicacion de software es un componente de la estrategia de seguridad, pero no sustituye evaluacion de riesgo de celda, hardware de seguridad ni cumplimiento normativo del fabricante/integrador.
-
-## Referencias cruzadas internas
-
-- Fundamentos de voz y ASR: [teoria_modelo_deteccion_voz.md](teoria_modelo_deteccion_voz.md)
-- Cinematica y trayectorias: [teoria_brazo_joints_movimientos.md](teoria_brazo_joints_movimientos.md)
-- Arquitectura de comunicacion TCP: [teoria_tcp_y_arquitectura.md](teoria_tcp_y_arquitectura.md)
 
 ## Referencias (APA 7)
 

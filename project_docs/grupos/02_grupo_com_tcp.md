@@ -12,7 +12,8 @@ Este grupo implementa el puente de comandos entre PC (Python) y robot (Lua) por 
 - `dobot_scripts/02_com/tcp_cmd.lua`
   - Servidor TCP en robot (`192.168.5.1:6001` por defecto).
   - Procesa comandos de texto y responde en una linea (`ok ...`, `pong`, errores).
-  - Comandos soportados: `derecha`, `izquierda`, `arriba`, `abajo`, `home`, `abrir_gripper`, `cerrar_gripper`, `ping`, `salir`.
+  - Comandos soportados: `derecha`, `izquierda`, `arriba`, `abajo`, `home`, `origen`, `abrir_gripper`, `cerrar_gripper`, `activar_ventosa`, `desactivar_ventosa`, `ping`, `salir`.
+  - Alias adicionales: `suction_on` y `suction_off`.
 
 ## Aplicaciones .py
 
@@ -20,6 +21,7 @@ Este grupo implementa el puente de comandos entre PC (Python) y robot (Lua) por 
   - Cliente TCP con GUI Tkinter y modo CLI.
   - Reutiliza una sola conexion (`RobotConnection`) y reconecta si se cae.
   - Permite comandos predefinidos y personalizados.
+  - Normaliza alias de operador, por ejemplo `origen -> home`.
 
 - `pc_scripts/02_com/send_cmd/send_cmd_config.json`
   - Configuracion local para IP/puerto/timeout.

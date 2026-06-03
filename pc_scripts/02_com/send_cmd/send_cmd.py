@@ -22,7 +22,9 @@ Usage examples:
 Commands supported by tcp_cmd.lua:
     derecha, izquierda, arriba, abajo,
     abrir_gripper, cerrar_gripper,
-    home, ping, salir
+    home, origen,
+    activar_ventosa, desactivar_ventosa,
+    ping, salir
 """
 
 from __future__ import annotations
@@ -39,6 +41,17 @@ from typing import Optional
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(SCRIPT_DIR, "send_cmd_config.json")
+
+COMMAND_ALIASES = {
+    "origen": "home",
+    "suction_on": "activar_ventosa",
+    "suction_off": "desactivar_ventosa",
+}
+
+
+def normalize_command(cmd: str) -> str:
+    normalized = " ".join(cmd.strip().lower().split())
+    return COMMAND_ALIASES.get(normalized, normalized)
 
 
 def load_defaults() -> dict[str, object]:
@@ -192,7 +205,8 @@ def interactive_mode(conn: RobotConnection) -> None:
     print(f"Connected target: {conn.ip}:{conn.port}")
     print(
         "Type commands: derecha | izquierda | arriba | abajo | "
-        "abrir_gripper | cerrar_gripper | home | ping | salir"
+        "abrir_gripper | cerrar_gripper | home | origen | "
+        "activar_ventosa | desactivar_ventosa | ping | salir"
     )
     while True:
         try:
@@ -202,14 +216,15 @@ def interactive_mode(conn: RobotConnection) -> None:
             break
         if not cmd:
             continue
-        reply = conn.send(cmd)
+        wire_cmd = normalize_command(cmd)
+        reply = conn.send(wire_cmd)
         if reply is None:
             print("(no reply: timeout)")
         elif reply.startswith("ERR connection:"):
             print(f"({reply})")
         else:
             print(f"< {reply}")
-        if cmd.lower() in {"salir", "exit"}:
+        if wire_cmd in {"salir", "exit"}:
             break
 
 
@@ -258,8 +273,11 @@ class CommandApp:
             "izquierda",
             "arriba",
             "abajo",
+            "origen",
             "abrir_gripper",
             "cerrar_gripper",
+            "activar_ventosa",
+            "desactivar_ventosa",
             "home",
             "ping",
             "salir",
@@ -327,11 +345,16 @@ class CommandApp:
                 self.root.after(0, lambda: self.log(f"Invalid input: {exc}"))
                 return
 
+            wire_cmd = normalize_command(cmd)
+
             self.conn.update_target(ip, port, timeout)
-            self.root.after(0, lambda: self.log(f"> {cmd}  ({ip}:{port})"))
+            if wire_cmd != cmd:
+                self.root.after(0, lambda: self.log(f"> {cmd} -> {wire_cmd}  ({ip}:{port})"))
+            else:
+                self.root.after(0, lambda: self.log(f"> {wire_cmd}  ({ip}:{port})"))
 
             with self._send_lock:
-                reply = self.conn.send(cmd)
+                reply = self.conn.send(wire_cmd)
 
             if reply is None:
                 self.root.after(0, lambda: self.log("< No reply (timeout)"))
@@ -365,9 +388,10 @@ def main() -> None:
     args = parser.parse_args()
 
     if args.command:
+        wire_cmd = normalize_command(args.command)
         conn = RobotConnection(args.ip, args.port, args.timeout)
         try:
-            reply = conn.send(args.command)
+            reply = conn.send(wire_cmd)
         finally:
             conn.close()
         if reply is None:

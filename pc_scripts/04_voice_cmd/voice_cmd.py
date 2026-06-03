@@ -8,7 +8,8 @@ Purpose:
     automatically to the Dobot Magician E6 via TCP.
 
     Commands recognised and sent:
-        derecha, izquierda, home, arriba, abajo
+        derecha, izquierda, home/origen, arriba, abajo,
+        activar ventosa, desactivar ventosa
 
 Design:
     - Voice detection uses Vosk (offline, closed grammar).
@@ -58,7 +59,34 @@ DEFAULT_MODEL_DIR: Path = (
 DEFAULT_SAMPLE_RATE = 16000
 DEFAULT_ROBOT_IP = "192.168.5.1"
 
-TARGET_WORDS = ["derecha", "izquierda", "home", "arriba", "abajo"]
+TARGET_WORDS = [
+    "derecha",
+    "izquierda",
+    "home",
+    "origen",
+    "arriba",
+    "abajo",
+    "activar ventosa",
+    "desactivar ventosa",
+]
+
+COMMAND_MAP = {
+    "origen": "home",
+    "activar ventosa": "activar_ventosa",
+    "desactivar ventosa": "desactivar_ventosa",
+    "suction_on": "activar_ventosa",
+    "suction_off": "desactivar_ventosa",
+}
+
+MANUAL_COMMANDS = [
+    ("Derecha", "derecha"),
+    ("Izquierda", "izquierda"),
+    ("Arriba", "arriba"),
+    ("Abajo", "abajo"),
+    ("Home", "home"),
+    ("Ventosa ON", "activar_ventosa"),
+    ("Ventosa OFF", "desactivar_ventosa"),
+]
 
 
 # ---------------------------------------------------------------------------
@@ -109,6 +137,10 @@ def list_input_devices() -> list[dict]:
 
 def normalize_word(value: str) -> str:
     return " ".join(value.strip().lower().split())
+
+
+def normalize_robot_command(value: str) -> str:
+    return COMMAND_MAP.get(normalize_word(value), normalize_word(value))
 
 
 # ---------------------------------------------------------------------------
@@ -309,7 +341,10 @@ class VoiceRecognizerWorker:
                         if text:
                             self.event_queue.put(("final", text))
                             if text in TARGET_WORDS:
-                                self.event_queue.put(("command", text))
+                                mapped = normalize_robot_command(text)
+                                if mapped != text:
+                                    self.event_queue.put(("status", f"Alias detectado: {text} -> {mapped}"))
+                                self.event_queue.put(("command", mapped))
         except (OSError, RuntimeError, ValueError) as exc:
             self.event_queue.put(("error", str(exc)))
         finally:
@@ -378,7 +413,8 @@ class VoiceCmdApp(tk.Tk):
         ttk.Label(root, text="Control de voz — Dobot Magician E6",
                   font=("Segoe UI", 18, "bold")).pack(anchor="w")
         ttk.Label(root, text=(
-            "Di: derecha · izquierda · home · arriba · abajo  "
+            "Di: derecha · izquierda · home/origen · arriba · abajo · "
+            "activar ventosa · desactivar ventosa  "
             "— el comando se envía automáticamente al robot."
         )).pack(anchor="w", pady=(4, 14))
 
@@ -462,9 +498,9 @@ class VoiceCmdApp(tk.Tk):
 
         btn2 = ttk.Frame(frame)
         btn2.pack(fill="x", pady=(8, 0))
-        for word in TARGET_WORDS:
-            ttk.Button(btn2, text=word.capitalize(),
-                       command=lambda w=word: self._send_manual(w)).pack(side="left", padx=(0, 6))
+        for label, cmd in MANUAL_COMMANDS:
+            ttk.Button(btn2, text=label,
+                       command=lambda c=cmd: self._send_manual(c)).pack(side="left", padx=(0, 6))
 
         ttk.Label(frame, text="▲ Envío manual (sin micrófono)",
                   font=("Segoe UI", 8), foreground="#777").pack(anchor="w", pady=(4, 0))
@@ -555,15 +591,16 @@ class VoiceCmdApp(tk.Tk):
     def _send_cmd(self, word: str) -> None:
         """Send *word* to the robot in a background thread."""
         self._sync_connection()
+        wire_cmd = normalize_robot_command(word)
 
         def _worker() -> None:
-            reply = self.connection.send(word)
-            self.event_queue.put(("tcp_reply", (word, reply)))
+            reply = self.connection.send(wire_cmd)
+            self.event_queue.put(("tcp_reply", (wire_cmd, reply)))
 
         threading.Thread(target=_worker, daemon=True).start()
 
     def _send_manual(self, word: str) -> None:
-        self._log(f"Envío manual: {word}")
+        self._log(f"Envío manual: {normalize_robot_command(word)}")
         self._send_cmd(word)
 
     # ------------------------------------------------------------------

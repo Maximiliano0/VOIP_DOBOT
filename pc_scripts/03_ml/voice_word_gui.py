@@ -4,8 +4,11 @@ Detects these spoken words from the computer microphone:
 - derecha
 - izquierda
 - home
+- origen (mapped to home)
 - arriba
 - abajo
+- activar ventosa
+- desactivar ventosa
 
 Dependencies: vosk, sounddevice
 Optional config: voice_word_config.json in the same folder.
@@ -23,7 +26,21 @@ from tkinter import filedialog, messagebox, ttk
 import sounddevice as sd
 from vosk import KaldiRecognizer, Model
 
-TARGET_WORDS = ["derecha", "izquierda", "home", "arriba", "abajo"]
+TARGET_WORDS = [
+    "derecha",
+    "izquierda",
+    "home",
+    "origen",
+    "arriba",
+    "abajo",
+    "activar ventosa",
+    "desactivar ventosa",
+]
+COMMAND_MAP = {
+    "origen": "home",
+    "activar ventosa": "activar_ventosa",
+    "desactivar ventosa": "desactivar_ventosa",
+}
 DEFAULT_SAMPLE_RATE = 16000
 DEFAULT_MODEL_DIR = "model"
 DEFAULT_CONFIG_FILE = "voice_word_config.json"
@@ -127,7 +144,10 @@ class VoiceRecognizerWorker:
                         if text:
                             self.event_queue.put(("final", text))
                             if text in TARGET_WORDS:
-                                self.event_queue.put(("command", text))
+                                mapped = COMMAND_MAP.get(text, text)
+                                if mapped != text:
+                                    self.event_queue.put(("status", f"Alias detectado: {text} -> {mapped}"))
+                                self.event_queue.put(("command", mapped))
                             else:
                                 self.event_queue.put(("status", f"Texto no objetivo: {text}"))
                     else:
@@ -185,7 +205,10 @@ class VoiceWordApp(tk.Tk):
 
         subtitle = ttk.Label(
             container,
-            text="Habla cerca del micrófono: derecha, izquierda, home, arriba o abajo.",
+            text=(
+                "Habla cerca del micrófono: derecha, izquierda, home/origen, arriba, abajo, "
+                "activar ventosa o desactivar ventosa."
+            ),
         )
         subtitle.pack(anchor="w", pady=(4, 14))
 

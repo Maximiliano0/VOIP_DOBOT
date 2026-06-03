@@ -24,6 +24,12 @@ local GRIPPER_DO_INDEX = 1
 local GRIPPER_OPEN_STATE = OFF
 local GRIPPER_CLOSE_STATE = ON
 
+-- Adjust to your ES01 suction cup wiring.
+-- Typical behavior: ON enables suction, OFF disables suction.
+local SUCTION_DO_INDEX = 2
+local SUCTION_ON_STATE = ON
+local SUCTION_OFF_STATE = OFF
+
 local function log(msg)
     print("[tcp_cmd] " .. tostring(msg))
 end
@@ -45,7 +51,7 @@ local function exec_cmd(cmd)
     elseif cmd == "abajo" then
         RelJointMovJ({ 0, TILT_DEG, 0, 0, 0, 0 }, MOTION)
         return "ok abajo", false
-    elseif cmd == "home" then
+    elseif cmd == "home" or cmd == "origen" then
         MovJ(HOME, MOTION)
         return "ok home", false
     elseif cmd == "abrir_gripper" then
@@ -54,6 +60,12 @@ local function exec_cmd(cmd)
     elseif cmd == "cerrar_gripper" then
         DO(GRIPPER_DO_INDEX, GRIPPER_CLOSE_STATE)
         return "ok cerrar_gripper", false
+    elseif cmd == "activar_ventosa" or cmd == "suction_on" then
+        DO(SUCTION_DO_INDEX, SUCTION_ON_STATE)
+        return "ok activar_ventosa", false
+    elseif cmd == "desactivar_ventosa" or cmd == "suction_off" then
+        DO(SUCTION_DO_INDEX, SUCTION_OFF_STATE)
+        return "ok desactivar_ventosa", false
     elseif cmd == "ping" then
         return "pong", false
     elseif cmd == "salir" or cmd == "exit" then
