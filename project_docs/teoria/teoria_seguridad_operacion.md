@@ -16,6 +16,7 @@ Capas relevantes en este proyecto:
 - Falsos positivos por ruido impulsivo o conversaciones cercanas.
 - Comandos no intencionales por terceros en el area.
 - Dependencia de calidad de audio (microfono, eco, reverberacion).
+- Activacion accidental de comandos de herramienta si no hay verificacion previa.
 
 ## Mitigaciones tecnicas recomendadas
 
@@ -24,6 +25,7 @@ Capas relevantes en este proyecto:
 - Umbrales operativos conservadores de velocidad durante comisionado.
 - Priorizar comando `home`/`origen` como estrategia de recuperacion.
 - Posibilidad de desactivar envio automatico y operar solo en modo manual.
+- Probar `test_ventosa` antes de manipular pieza real.
 
 ## Mitigaciones procedimentales
 
@@ -40,6 +42,7 @@ Capas relevantes en este proyecto:
 - Prueba de deteccion de voz en local antes de habilitar envio.
 - Operador con acceso inmediato a parada de emergencia.
 - Verificar accion segura del efector final (`activar_ventosa`/`desactivar_ventosa`) antes de operar con piezas.
+- Confirmar que la app de voz este en idioma/gramatica correcta antes de habilitar escucha continua.
 
 ## Nota de cumplimiento
 

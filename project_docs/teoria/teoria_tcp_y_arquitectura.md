@@ -25,6 +25,12 @@ Para control de robot en LAN local, esta confiabilidad suele ser preferible fren
 
 Mantener una sesion TCP activa evita handshakes repetidos y reduce latencia percibida por comando. Tambien disminuye puntos de falla de reconexion en operaciones continuas.
 
+En el estado actual:
+
+- `send_cmd.py` y `voice_cmd.py` usan envio serializado por lock de red.
+- Si la sesion cae, el cliente intenta reconexion en el siguiente envio.
+- `voice_cmd.py` no requiere palabra prefijo y envia el comando reconocido directamente.
+
 ## Contrato de protocolo de aplicacion
 
 - Codificacion UTF-8.
@@ -32,11 +38,12 @@ Mantener una sesion TCP activa evita handshakes repetidos y reduce latencia perc
 - Unidad logica: 1 comando por linea, 1 respuesta por linea.
 - Comandos idempotentes o acotados para minimizar estados ambiguos.
 
-Ejemplos de comandos actuales:
+Comandos actuales:
 
 - Movimiento: `derecha`, `izquierda`, `arriba`, `abajo`, `home`.
 - Alias de operador: `origen` (normalizado a `home`).
-- Efector final: `activar_ventosa`, `desactivar_ventosa`.
+- Efector final: `activar_ventosa`, `desactivar_ventosa`, `test_ventosa`.
+- Servicio: `ping`, `salir`.
 
 ## Resiliencia y manejo de errores
 

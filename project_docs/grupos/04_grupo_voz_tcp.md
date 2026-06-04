@@ -1,41 +1,39 @@
 # Grupo 04 - Voz a comando TCP (integrado)
 
-Este grupo integra reconocimiento de voz y envio TCP al robot en una sola aplicacion GUI.
+Aplicacion integrada de voz + envio TCP al robot.
 
 ## Objetivo
 
-- Escuchar palabras clave por microfono.
-- Enviar automaticamente el comando detectado al servidor Lua del robot.
-- Permitir alias de operador (`origen`) y accionar ventosa electrica ES01.
+- Escuchar comandos por microfono.
+- Enviar el comando detectado al servidor Lua.
+- Mantener comportamiento de envio estable, equivalente al cliente 02.
 
-## Aplicaciones .py
+## Script actual
 
 - `pc_scripts/04_voice_cmd/voice_cmd.py`
-  - GUI integrada con:
-    - Configuracion TCP (IP, puerto, timeout).
-    - Configuracion Vosk (modelo, microfono, sample rate).
-    - Envio automatico al detectar palabra objetivo.
-    - Envio manual por botones.
-    - Alias de voz: `origen -> home`.
-    - Control de ventosa: `activar ventosa` / `desactivar ventosa` y botones `Ventosa ON/OFF`.
-  - IP por defecto: `192.168.5.1`.
-  - Soporta ruta de modelo para script y para `.exe` empaquetado (PyInstaller).
+  - GUI con configuracion TCP (IP, puerto, timeout).
+  - GUI con configuracion de voz (modelo, microfono, sample rate).
+  - Deteccion de palabras por gramatica cerrada (sin prefijo de activacion).
+  - Envio automatico y envio manual por botones.
+  - Envio serializado con lock de red, sin descarte por debounce.
+  - Alias: `origen -> home`.
+  - Ventosa: `activar ventosa`, `desactivar ventosa`, `test ventosa`.
 
 - `pc_scripts/04_voice_cmd/voice_cmd_config.json`
-  - Persistencia de configuracion usada por la GUI.
+  - Persistencia de configuracion de la GUI.
 
 - `pc_scripts/04_voice_cmd/dist/voice_cmd.exe`
-  - Ejecutable de escritorio sin consola negra (`--windowed`).
+  - Ejecutable Windows actual.
 
-## Aplicaciones .lua
+## Contraparte robot
 
-- Usa como contraparte `dobot_scripts/02_com/tcp_cmd.lua`.
+- `dobot_scripts/02_com/tcp_cmd.lua`
 
 ## Flujo operativo
 
-1. Arrancar `tcp_cmd.lua` en el robot.
-2. Abrir `voice_cmd.py` o `voice_cmd.exe` en el PC.
-3. Verificar `ping`.
+1. Ejecutar `tcp_cmd.lua` en el robot.
+2. Abrir `voice_cmd.py` o `voice_cmd.exe`.
+3. Verificar conectividad (`ping`).
 4. Iniciar escucha.
-5. Al detectar palabra, se envia por TCP y se muestra respuesta.
-6. Para retorno a origen se acepta `origen` como alias de `home`.
+5. Hablar comando objetivo.
+6. Revisar respuesta TCP en log de la GUI.

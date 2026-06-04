@@ -90,7 +90,7 @@ Estas funciones ayudan a detectar:
 - Configuraciones cercanas a singularidad.
 - Violaciones de restricciones cinematicas.
 
-## Aplicacion al caso VOIP_DOBOT
+## Aplicacion al caso del proyecto
 
 La capa de voz/TCP mapea comandos discretos a movimientos limitados:
 
@@ -98,6 +98,7 @@ La capa de voz/TCP mapea comandos discretos a movimientos limitados:
 - `arriba` y `abajo`: ajuste de inclinacion.
 - `home` y `origen`: retorno a postura segura de referencia.
 - `activar_ventosa` y `desactivar_ventosa`: accionamiento del efector final de succion (ES01).
+- `test_ventosa`: verificacion rapida ON/OFF del efector para comisionado.
 
 El diseno prioriza control interpretable y repetible sobre planificacion compleja.
 

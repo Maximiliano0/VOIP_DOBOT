@@ -4,7 +4,7 @@
 
 El sistema usa reconocimiento automatico de voz offline con Vosk para detectar un vocabulario cerrado orientado a control del robot.
 
-Palabras objetivo:
+Palabras objetivo actuales:
 
 - derecha
 - izquierda
@@ -14,6 +14,7 @@ Palabras objetivo:
 - abajo
 - activar ventosa
 - desactivar ventosa
+- test ventosa
 
 Este enfoque reduce ambiguedad semantica y limita acciones posibles, lo cual es deseable para tareas de mando operativo.
 
@@ -47,7 +48,7 @@ La decodificacion por transductores de estados finitos ponderados (WFST) integra
 
 ## Gramatica cerrada en la aplicacion
 
-La app usa `KaldiRecognizer(model, rate, grammar_json)` para restringir busqueda a las palabras objetivo. Practicamente esto:
+Las apps 03 y 04 usan `KaldiRecognizer(model, rate, grammar_json)` para restringir busqueda a las palabras objetivo. Practicamente esto:
 
 - Disminuye falsos positivos.
 - Reduce latencia de decision.
@@ -59,7 +60,9 @@ La app usa `KaldiRecognizer(model, rate, grammar_json)` para restringir busqueda
 2. Extraccion de caracteristicas (MFCC + normalizacion).
 3. Estimacion acustica con red TDNN chain (Kaldi).
 4. Decodificacion WFST con restriccion de gramatica.
-5. Emision de palabra final y activacion de comando.
+5. Emision de palabra final y mapeo a comando canonico (`origen -> home`, `test ventosa -> test_ventosa`, etc.).
+
+En `04_voice_cmd`, el comando reconocido se envia por TCP inmediatamente (sin palabra prefijo de activacion).
 
 ## Criterios de calidad recomendados
 

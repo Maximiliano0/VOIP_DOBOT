@@ -1,40 +1,44 @@
 # Grupo 02 - Comunicacion TCP robot-PC
 
-Este grupo implementa el puente de comandos entre PC (Python) y robot (Lua) por Ethernet/TCP.
+Puente principal entre PC (Python) y robot (Lua) por Ethernet/TCP.
 
 ## Objetivo
 
-- Enviar comandos de movimiento desde el PC al robot.
-- Mantener una conexion persistente para evitar reconexiones por comando.
+- Enviar comandos operativos al robot en tiempo real.
+- Mantener conexion persistente y reconectar cuando sea necesario.
 
-## Aplicaciones .lua
+## Scripts actuales
 
 - `dobot_scripts/02_com/tcp_cmd.lua`
-  - Servidor TCP en robot (`192.168.5.1:6001` por defecto).
-  - Procesa comandos de texto y responde en una linea (`ok ...`, `pong`, errores).
-  - Comandos soportados: `derecha`, `izquierda`, `arriba`, `abajo`, `home`, `origen`, `abrir_gripper`, `cerrar_gripper`, `activar_ventosa`, `desactivar_ventosa`, `ping`, `salir`.
-  - Alias adicionales: `suction_on` y `suction_off`.
-
-## Aplicaciones .py
+  - Servidor TCP robot-side (`192.168.5.1:6001` por defecto).
+  - Acepta un cliente, detecta desconexion y reabre listener.
+  - Responde siempre 1 linea por comando.
+  - Comandos:
+    - Movimiento: `derecha`, `izquierda`, `arriba`, `abajo`, `home`, `origen`
+    - Gripper: `abrir_gripper`, `cerrar_gripper`
+    - Ventosa: `activar_ventosa`, `desactivar_ventosa`, `test_ventosa`
+    - Servicio: `ping`, `salir`
+  - Alias: `suction_on`, `suction_off`, `test_suction`, `exit`.
+  - Ventosa configurable por `SUCTION_OUTPUT_MODE`.
 
 - `pc_scripts/02_com/send_cmd/send_cmd.py`
-  - Cliente TCP con GUI Tkinter y modo CLI.
-  - Reutiliza una sola conexion (`RobotConnection`) y reconecta si se cae.
-  - Permite comandos predefinidos y personalizados.
-  - Normaliza alias de operador, por ejemplo `origen -> home`.
+  - GUI Tkinter + modo CLI.
+  - Envio con reconexion automatica en `RobotConnection`.
+  - Normaliza alias de operador y ventosa.
 
 - `pc_scripts/02_com/send_cmd/send_cmd_config.json`
-  - Configuracion local para IP/puerto/timeout.
+  - Config local de IP, puerto y timeout.
 
-## Flujo
-
-1. Robot ejecuta `tcp_cmd.lua`.
-2. PC ejecuta `send_cmd.py`.
-3. Usuario envia comando.
-4. Robot ejecuta movimiento y devuelve respuesta.
-
-## Protocolo
+## Protocolo de aplicacion
 
 - Transporte: TCP.
-- Formato: 1 comando por linea (`\n`).
-- Respuesta: 1 linea por comando.
+- Codificacion: UTF-8.
+- Formato: 1 comando por linea terminada en `\n`.
+- Respuesta: 1 linea por comando (`ok ...`, `pong`, `err ...`, `bye`).
+
+## Flujo recomendado
+
+1. Ejecutar `tcp_cmd.lua` en el robot.
+2. Abrir `send_cmd.py` o `send_cmd_gui.exe` en PC.
+3. Probar `ping`.
+4. Operar comandos de movimiento/ventosa.

@@ -1,31 +1,39 @@
 # Grupo 03 - Deteccion de voz local (sin envio TCP)
 
-Este grupo implementa deteccion offline de palabras clave por microfono para pruebas de reconocimiento.
+Modulo de prueba de reconocimiento de voz offline en PC.
 
 ## Objetivo
 
-- Detectar palabras: `derecha`, `izquierda`, `home`, `origen`, `arriba`, `abajo`, `activar ventosa`, `desactivar ventosa`.
-- Probar calidad de reconocimiento en GUI local.
+- Validar calidad de deteccion por microfono.
+- Probar vocabulario operativo antes de enviar al robot.
 
-## Aplicaciones .py
+## Script actual
 
 - `pc_scripts/03_ml/voice_word_gui.py`
   - GUI Tkinter para iniciar/detener escucha.
-  - Usa Vosk + `sounddevice` en un hilo de trabajo.
-  - Incluye mapeo de alias: `origen -> home` y comandos de ventosa a comandos TCP canónicos.
+  - Reconocimiento offline con Vosk + `sounddevice`.
+  - Gramatica cerrada de palabras objetivo.
   - Muestra texto parcial/final y conteo de detecciones.
+  - Mapea texto detectado a comando canonico.
+
+Palabras objetivo actuales:
+
+- `derecha`, `izquierda`, `home`, `origen`, `arriba`, `abajo`
+- `activar ventosa`, `desactivar ventosa`, `test ventosa`
+
+Mapeos principales:
+
+- `origen -> home`
+- `activar ventosa -> activar_ventosa`
+- `desactivar ventosa -> desactivar_ventosa`
+- `test ventosa -> test_ventosa`
+
+## Archivos asociados
 
 - `pc_scripts/03_ml/requirements.txt`
-  - Dependencias del modulo de voz.
-
 - `pc_scripts/03_ml/model/`
-  - Modelo Vosk en espanol (`vosk-model-small-es-0.42`).
+- `pc_scripts/03_ml/dist/voice_word_gui.exe`
 
-## Aplicaciones .lua
+## Nota clave
 
-- No hay scripts Lua en este grupo.
-
-## Notas
-
-- Este grupo no envia comandos al robot; solo valida reconocimiento.
-- Es la base del grupo 04.
+Este grupo no envia comandos por TCP. Solo valida deteccion de voz y sirve como base para el grupo 04.

@@ -1,42 +1,36 @@
 # Grupo 01 - Pruebas robot (dobot_scripts/01_test)
 
-Este grupo contiene pruebas de movilidad, homing y seguridad que se ejecutan directamente en el controlador del robot (Lua en DobotStudio Pro 4.4).
+Scripts de prueba robot-side en Lua para DobotStudio Pro 4.4.
 
 ## Objetivo
 
-- Validar movimiento base del robot.
-- Probar rangos de joints y verificaciones previas.
-- Evaluar configuraciones de seguridad y prevencion de colisiones.
+- Verificar movilidad basica y retorno seguro.
+- Validar limites y chequeos de movimiento.
+- Probar funciones de seguridad del controlador.
 
-## Aplicaciones .lua
+## Scripts actuales
 
 - `dobot_scripts/01_test/go_home.lua`
-  - Lleva el robot a HOME con `CheckMovJ` previo.
-  - Ajusta `SpeedFactor` para homing seguro.
+  - Ejecuta homing con `CheckMovJ` previo.
+  - Fuerza ventosa en OFF antes de mover.
+  - Usa `SUCTION_OUTPUT_MODE` configurable (`tool_do`, `controller_do`, `both`).
 
 - `dobot_scripts/01_test/mobility.lua`
-  - Prueba movimiento por joint (J1..J6) y trayectorias cartesianas con `MovL`.
-  - Util para validacion rapida post-instalacion.
+  - Pruebas de movimiento articular y cartesiano.
 
 - `dobot_scripts/01_test/max_test.lua`
-  - Recorre rangos min/max por joint a alta velocidad.
-  - Requiere limites reales configurados antes de ejecutar.
+  - Recorrido de limites de joints (usar con precaucion).
 
 - `dobot_scripts/01_test/collision.lua`
-  - Prueba capas de seguridad: collision level, SafeSkin, paredes virtuales y checks de alcance.
-  - Incluye target intencionalmente inalcanzable para validar rechazos del planificador.
+  - Validacion de parametros de colision y seguridad.
 
-## Aplicaciones .py
+## Entrada y salida
 
-- No hay scripts Python en este grupo.
+- Entrada: ejecucion local desde DobotStudio Pro.
+- Salida: movimiento fisico y logs por consola Lua.
 
-## Entradas/salidas
+## Seguridad operativa
 
-- Entrada: ejecucion local en controlador Dobot.
-- Salida: movimiento fisico del robot y logs en consola Lua.
-
-## Riesgos operativos
-
-- Ejecutar solo con espacio despejado.
-- Mantener E-stop accesible.
-- Revisar limites y parametros antes de pruebas de rango maximo.
+- Espacio de trabajo despejado.
+- E-stop accesible.
+- Velocidades conservadoras en primera prueba.

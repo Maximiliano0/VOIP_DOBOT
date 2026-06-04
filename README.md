@@ -1,12 +1,10 @@
-# Dobot Magician E6 - Control por TCP y voz
+# Dobot Magician E6 - Control TCP y voz offline
 
 <p align="center">
   <img src="project_docs/media/Magician%20E6.jpg" alt="Dobot Magician E6" width="320"/>
 </p>
 
-<p align="center">
-  Integracion PC-Robot con GUI, TCP persistente y comandos por voz offline.
-</p>
+Proyecto para operar el Dobot Magician E6 por Ethernet desde PC, con cliente TCP manual y control por voz offline (Vosk).
 
 ## Navegacion rapida
 
@@ -14,84 +12,56 @@
 - [Documentacion tecnica](project_docs/README.md)
 - [Dependencias](project_docs/requirements.txt)
 
-## Resumen
+## Estado actual
 
-Proyecto para controlar un Dobot Magician E6 por Ethernet desde PC con dos modos principales:
+- Robot-side estable en `dobot_scripts/02_com/tcp_cmd.lua`.
+- Cliente manual estable en `pc_scripts/02_com/send_cmd/send_cmd.py`.
+- Deteccion local de voz en `pc_scripts/03_ml/voice_word_gui.py`.
+- Integracion voz + TCP en `pc_scripts/04_voice_cmd/voice_cmd.py`.
+- Script demostrativo pick/place en `dobot_scripts/05_pick/pick_place.lua`.
 
-- Envio manual de comandos TCP.
-- Deteccion de voz de palabras clave y envio automatico al robot.
+## Comandos operativos vigentes
 
-## Objetivo
+- Movimiento: `derecha`, `izquierda`, `arriba`, `abajo`, `home`, `origen`.
+- Gripper: `abrir_gripper`, `cerrar_gripper`.
+- Ventosa: `activar_ventosa`, `desactivar_ventosa`, `test_ventosa`.
+- Servicio: `ping`, `salir`.
 
-Implementar una arquitectura simple, robusta y reproducible para:
+Alias soportados:
 
-- Probar movilidad y seguridad del robot (Lua).
-- Exponer un servidor de comandos en el controlador (Lua).
-- Controlar por GUI en PC (Python).
-- Integrar reconocimiento de voz offline (Vosk) para comandos operativos.
+- `origen -> home`
+- `suction_on -> activar_ventosa`
+- `suction_off -> desactivar_ventosa`
+- `test_suction -> test_ventosa`
 
-## Estructura del proyecto
-
-- `dobot_scripts/`
-  - `01_test/`: pruebas de movilidad, homing y seguridad.
-  - `02_com/tcp_cmd.lua`: servidor TCP robot-side.
-
-- `pc_scripts/`
-  - `02_com/send_cmd/send_cmd.py`: cliente TCP manual (GUI/CLI).
-  - `03_ml/voice_word_gui.py`: deteccion de voz local.
-  - `04_voice_cmd/voice_cmd.py`: integracion voz + envio TCP.
-
-- `engitbook/`
-  - Referencia API offline de Dobot (fuente de verdad para funciones Lua).
-
-- `project_docs/`
-  - Requisitos unificados, documentacion por grupos, teoria y evidencia.
-
-## Dependencias de entorno
-
-Instalar desde:
-
-- `project_docs/requirements.txt`
-
-Comando sugerido:
-
-```bash
-python -m pip install -r project_docs/requirements.txt
-```
-
-## Modos de uso
-
-- `02_com`: control manual por GUI/CLI via TCP.
-- `03_ml`: deteccion de voz local (sin envio a robot).
-- `04_voice_cmd`: deteccion de voz + envio TCP integrado.
-
-## Flujo rapido de uso
+## Flujo rapido
 
 1. En el robot, ejecutar `dobot_scripts/02_com/tcp_cmd.lua`.
-2. En el PC, iniciar una app:
-   - Manual TCP: `pc_scripts/02_com/send_cmd/send_cmd.py`
-   - Voz local: `pc_scripts/03_ml/voice_word_gui.py`
-   - Voz + TCP: `pc_scripts/04_voice_cmd/voice_cmd.py`
-3. Verificar conectividad con `ping`.
-4. Operar comandos (`derecha`, `izquierda`, `arriba`, `abajo`, `home`/`origen`, `activar_ventosa`, `desactivar_ventosa`).
+2. En PC, usar una de estas apps:
+   - `pc_scripts/02_com/send_cmd/send_cmd.py`
+   - `pc_scripts/03_ml/voice_word_gui.py`
+   - `pc_scripts/04_voice_cmd/voice_cmd.py`
+3. Verificar red local (`ping 192.168.5.1`).
+4. Operar desde GUI o voz.
 
-## Ejecutables .exe
+## Ejecutables Windows (.exe)
 
-El proyecto incluye builds en `dist/` para uso en Windows sin abrir terminal.
-
+- `pc_scripts/02_com/send_cmd/dist/send_cmd_gui.exe`
 - `pc_scripts/03_ml/dist/voice_word_gui.exe`
 - `pc_scripts/04_voice_cmd/dist/voice_cmd.exe`
 
-## Seguridad
+Build recomendado: usar siempre Python de `.venv`.
 
-- Mantener E-stop accesible durante pruebas.
-- Iniciar con velocidades bajas y workspace despejado.
-- Validar reconocimiento de voz antes de habilitar envio automatico.
+## Seguridad minima
 
-## Documentacion incluida en project_docs
+- E-stop accesible.
+- Velocidad conservadora al comisionar.
+- Espacio despejado.
+- Validar ventosa y retorno a `home` antes de operar con pieza.
 
-- Portada de documentacion: `project_docs/README.md`
-- Indice navegable: `INDEX.md`
+## Documentacion
+
+- Portada tecnica: `project_docs/README.md`
 - Documentos por grupo: `project_docs/grupos/`
-- Documentos teoricos: `project_docs/teoria/`
-- Evidencia multimedia: `project_docs/media/`
+- Teoria y fundamentos: `project_docs/teoria/`
+- Evidencia: `project_docs/media/`
