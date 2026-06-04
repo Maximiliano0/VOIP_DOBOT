@@ -8,8 +8,10 @@ Purpose:
     automatically to the Dobot Magician E6 via TCP.
 
     Commands recognised and sent:
-        derecha, izquierda, home/origen, arriba, abajo,
-        activar ventosa, desactivar ventosa
+        derecha, izquierda, home/origen,
+        arriba, abajo,
+        activar ventosa, desactivar ventosa,
+        test ventosa
 
 Design:
     - Voice detection uses Vosk (offline, closed grammar).
@@ -39,7 +41,6 @@ import threading
 import tkinter as tk
 from pathlib import Path
 from tkinter import filedialog, messagebox, ttk
-from typing import Optional
 
 import sounddevice as sd
 from vosk import KaldiRecognizer, Model
@@ -68,14 +69,17 @@ TARGET_WORDS = [
     "abajo",
     "activar ventosa",
     "desactivar ventosa",
+    "test ventosa",
 ]
 
 COMMAND_MAP = {
     "origen": "home",
     "activar ventosa": "activar_ventosa",
     "desactivar ventosa": "desactivar_ventosa",
+    "test ventosa": "test_ventosa",
     "suction_on": "activar_ventosa",
     "suction_off": "desactivar_ventosa",
+    "test_suction": "test_ventosa",
 }
 
 MANUAL_COMMANDS = [
@@ -86,6 +90,7 @@ MANUAL_COMMANDS = [
     ("Home", "home"),
     ("Ventosa ON", "activar_ventosa"),
     ("Ventosa OFF", "desactivar_ventosa"),
+    ("Test ventosa", "test_ventosa"),
 ]
 
 
@@ -396,6 +401,7 @@ class VoiceCmdApp(tk.Tk):
         self.device_map: dict[str, int | None] = {"Auto": None}
         self.device_combo: ttk.Combobox | None = None
         self.command_count = 0
+        self._send_lock = threading.Lock()
 
         self._build_ui()
         self._load_devices()
@@ -414,7 +420,7 @@ class VoiceCmdApp(tk.Tk):
                   font=("Segoe UI", 18, "bold")).pack(anchor="w")
         ttk.Label(root, text=(
             "Di: derecha · izquierda · home/origen · arriba · abajo · "
-            "activar ventosa · desactivar ventosa  "
+            "activar ventosa · desactivar ventosa · test ventosa  "
             "— el comando se envía automáticamente al robot."
         )).pack(anchor="w", pady=(4, 14))
 
@@ -594,7 +600,8 @@ class VoiceCmdApp(tk.Tk):
         wire_cmd = normalize_robot_command(word)
 
         def _worker() -> None:
-            reply = self.connection.send(wire_cmd)
+            with self._send_lock:
+                reply = self.connection.send(wire_cmd)
             self.event_queue.put(("tcp_reply", (wire_cmd, reply)))
 
         threading.Thread(target=_worker, daemon=True).start()

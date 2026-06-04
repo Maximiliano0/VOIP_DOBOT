@@ -23,7 +23,7 @@ Commands supported by tcp_cmd.lua:
     derecha, izquierda, arriba, abajo,
     abrir_gripper, cerrar_gripper,
     home, origen,
-    activar_ventosa, desactivar_ventosa,
+    activar_ventosa, desactivar_ventosa, test_ventosa,
     ping, salir
 """
 
@@ -46,6 +46,7 @@ COMMAND_ALIASES = {
     "origen": "home",
     "suction_on": "activar_ventosa",
     "suction_off": "desactivar_ventosa",
+    "test_suction": "test_ventosa",
 }
 
 
@@ -206,7 +207,7 @@ def interactive_mode(conn: RobotConnection) -> None:
     print(
         "Type commands: derecha | izquierda | arriba | abajo | "
         "abrir_gripper | cerrar_gripper | home | origen | "
-        "activar_ventosa | desactivar_ventosa | ping | salir"
+        "activar_ventosa | desactivar_ventosa | test_ventosa | ping | salir"
     )
     while True:
         try:
@@ -278,6 +279,7 @@ class CommandApp:
             "cerrar_gripper",
             "activar_ventosa",
             "desactivar_ventosa",
+            "test_ventosa",
             "home",
             "ping",
             "salir",

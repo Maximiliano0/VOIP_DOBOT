@@ -28,7 +28,7 @@ local SPEED_FACTOR = 100
 local FRAME_MAX = { user = 0, tool = 0, a = 100, v = 100 }
 
 -- Neutral home posture used in Dobot motion examples.
-local HOME = { joint = { 0, 0, 90, 0, 90, 0 } }
+local HOME = { joint = { 0, 0, 90, 0, -90, 0 } }
 
 -- Set real min/max limits for each joint (degrees).
 -- Defaults below are placeholders; update with your E6 limits from your setup.

@@ -17,7 +17,7 @@ local READ_TIMEOUT_S = 2
 local TURN_DEG = 45
 local TILT_DEG = 25
 local MOTION = { a = 60, v = 60, cp = 0 }
-local HOME = { joint = { 0, 0, 90, 0, 90, 0 } }
+local HOME = { joint = { 0, 0, 90, 0, -90, 0 } }
 
 -- Adjust to your gripper wiring.
 local GRIPPER_DO_INDEX = 1
@@ -25,10 +25,14 @@ local GRIPPER_OPEN_STATE = OFF
 local GRIPPER_CLOSE_STATE = ON
 
 -- Adjust to your ES01 suction cup wiring.
--- Typical behavior: ON enables suction, OFF disables suction.
-local SUCTION_DO_INDEX = 2
+-- ES01 is commonly wired on tool DO (ToolDO), not controller DO.
+-- Modes: "tool_do" | "controller_do" | "both"
+local SUCTION_OUTPUT_MODE = "tool_do"
+local SUCTION_TOOL_DO_INDEX = 1
+local SUCTION_CTRL_DO_INDEX = 2
 local SUCTION_ON_STATE = ON
 local SUCTION_OFF_STATE = OFF
+local SUCTION_TEST_MS = 1000
 
 local function log(msg)
     print("[tcp_cmd] " .. tostring(msg))
@@ -36,6 +40,21 @@ end
 
 local function trim(s)
     return (s:gsub("^%s+", ""):gsub("%s+$", ""))
+end
+
+local function set_suction(state)
+    if SUCTION_OUTPUT_MODE == "tool_do" then
+        ToolDO(SUCTION_TOOL_DO_INDEX, state)
+        return true, nil
+    elseif SUCTION_OUTPUT_MODE == "controller_do" then
+        DO(SUCTION_CTRL_DO_INDEX, state)
+        return true, nil
+    elseif SUCTION_OUTPUT_MODE == "both" then
+        ToolDO(SUCTION_TOOL_DO_INDEX, state)
+        DO(SUCTION_CTRL_DO_INDEX, state)
+        return true, nil
+    end
+    return false, "err suction mode invalido"
 end
 
 local function exec_cmd(cmd)
@@ -61,11 +80,28 @@ local function exec_cmd(cmd)
         DO(GRIPPER_DO_INDEX, GRIPPER_CLOSE_STATE)
         return "ok cerrar_gripper", false
     elseif cmd == "activar_ventosa" or cmd == "suction_on" then
-        DO(SUCTION_DO_INDEX, SUCTION_ON_STATE)
+        local ok, err = set_suction(SUCTION_ON_STATE)
+        if not ok then
+            return err, false
+        end
         return "ok activar_ventosa", false
     elseif cmd == "desactivar_ventosa" or cmd == "suction_off" then
-        DO(SUCTION_DO_INDEX, SUCTION_OFF_STATE)
+        local ok, err = set_suction(SUCTION_OFF_STATE)
+        if not ok then
+            return err, false
+        end
         return "ok desactivar_ventosa", false
+    elseif cmd == "test_ventosa" or cmd == "test_suction" then
+        local ok_on, err_on = set_suction(SUCTION_ON_STATE)
+        if not ok_on then
+            return err_on, false
+        end
+        Wait(SUCTION_TEST_MS)
+        local ok_off, err_off = set_suction(SUCTION_OFF_STATE)
+        if not ok_off then
+            return err_off, false
+        end
+        return "ok test_ventosa", false
     elseif cmd == "ping" then
         return "pong", false
     elseif cmd == "salir" or cmd == "exit" then

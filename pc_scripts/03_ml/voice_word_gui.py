@@ -9,6 +9,7 @@ Detects these spoken words from the computer microphone:
 - abajo
 - activar ventosa
 - desactivar ventosa
+- test ventosa
 
 Dependencies: vosk, sounddevice
 Optional config: voice_word_config.json in the same folder.
@@ -35,11 +36,13 @@ TARGET_WORDS = [
     "abajo",
     "activar ventosa",
     "desactivar ventosa",
+    "test ventosa",
 ]
 COMMAND_MAP = {
     "origen": "home",
     "activar ventosa": "activar_ventosa",
     "desactivar ventosa": "desactivar_ventosa",
+    "test ventosa": "test_ventosa",
 }
 DEFAULT_SAMPLE_RATE = 16000
 DEFAULT_MODEL_DIR = "model"
@@ -207,7 +210,7 @@ class VoiceWordApp(tk.Tk):
             container,
             text=(
                 "Habla cerca del micrófono: derecha, izquierda, home/origen, arriba, abajo, "
-                "activar ventosa o desactivar ventosa."
+                "activar ventosa, desactivar ventosa o test ventosa."
             ),
         )
         subtitle.pack(anchor="w", pady=(4, 14))
